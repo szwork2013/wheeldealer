@@ -1,0 +1,49 @@
+@media screen and (max-device-width: 480px) {
+.appMenuStepBar {
+  float: right;    
+  overflow: hidden;
+  counter-reset: flag;
+  position: relative;
+  top: 5%;
+  margin-top:10px;
+  margin-bottom:10px;
+  position: relative;
+  float: right;
+  margin-right:1%;
+  width:90%;
+
+ }
+ .appMenuStepBar .stepBtn{
+  line-height: 36px;
+  width:  100px;
+  float: right;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  border: 1.5px solid #7ea4cf; 
+ }
+}
+
+@media screen and (min-device-width: 481px) {
+.appMenuStepBar {
+  float: right;    
+  overflow: hidden;
+  counter-reset: flag;
+  position: relative;
+  top: 5%;
+  margin-top:1%;
+  float: right;
+  margin-right: 5%;
+  width: 70%;
+ }
+ .appMenuStepBar .stepBtn{
+  line-height: 36px;
+  width:  100px;
+  float: right;
+  position: relative;
+  text-decoration: none;
+  display: block;
+border: 1.5px solid #7ea4cf; 
+ }
+}
+ 

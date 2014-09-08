@@ -1,0 +1,146 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+.appUserPanelMenu {
+  width: 100%;
+  float:left;
+ }
+.appUserPanelMenu > ul > li > a {
+  text-decoration: none;
+  left: 0;
+  top: 5px;
+  width: 100%;
+  height: 60px;
+  padding-right: 10px;
+  display: inline-block;
+  position: relative;
+  border-radius: 1px; 
+  border: 1px solid black; 
+  margin:0 5px 4px 0; 
+  padding-top: 15px;
+  font: normal bold 16px/16px Arial, sans-serif;
+ }
+.appUserPanelMenu > ul > li > ul > li > a {
+  text-decoration: none;
+  width: 100%;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  padding-right: 10px;
+  border: 1px solid #7ea4cf; 
+  margin:0 5px 4px 0; 
+  padding-top: 10px;
+  font: normal bold 14px/14px Arial, sans-serif;
+  text-align:left;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+ .appUserPanelMenu {
+  width: 20%;
+  float:left;
+ }
+.appUserPanelMenu > ul > li > a {
+  text-decoration: none;
+  left: 0;
+  top: 5px;
+  width: 100%;
+  height: 40px;
+  padding-right: 40px;
+  display: inline-block;
+  position: relative;
+  padding-right: 10px;
+  border-radius: 1px; 
+  border: 1px solid black; 
+  margin:0 5px 4px 0; 
+  text-align:left;
+ }
+}
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+
+
+.appUserPanelMenu .text{
+  font-family:Tahoma;
+  font-weight:bold;
+  font-size:20px;
+  color:red;
+  animation:text 2s infinite;
+  border:4px solid;
+  transform:skew(5deg);
+ vertical-align: center;
+}
+
+.appUserPanelMenu, .appUserPanelMenu ul, .appUserPanelMenu li, .appUserPanelMenu a {
+ margin: 0;
+ padding: 0 0 0 0;
+ border: 0;
+ list-style: none;
+ line-height: 1;
+ position: relative;
+ text-align:left;
+}
+
+.appUserPanelMenu a {
+ list-style: none;
+ line-height: 1;
+ position: relative;
+ text-align:left;
+}
+
+.appUserPanelMenu a {
+ line-height: 2.5;
+}
+
+
+.appUserPanelMenu > ul > li > a > span{ 
+ float:left;
+ margin-left:40px;
+ margin-top:5px;
+ color:black;
+ }
+	
+.appUserPanelMenu > ul > li.active {
+ border-bottom: none;
+}
+
+.appUserPanelMenu > ul > li.active > a span {
+ color: black;
+}
+
+.appUserPanelMenu ul ul {
+ display: none;
+}
+
+.appUserPanelMenu ul ul li {
+ margin-top:1px;
+ border-radius: 3px; 
+ border-bottom: 1px solid #7ea4cf; 
+ border-right: 1px solid #7ea4cf; 
+ border-left: 1px solid #7ea4cf; 
+ width:80%;
+ margin-left:15%;
+}
+
+.appUserPanelMenu ul ul a {
+ display: block;
+ color: black;
+ /*background: #F0F0F0; */
+ background: #FFFFFF;
+ font-size: 13px;
+ text-decoration: none;
+}
+
+.appUserPanelMenu ul ul li:hover {
+ color:#FFFFFF;
+ background:-webkit-linear-gradient(top,#a7d1f7,#79aae9); 
+ background:-moz-linear-gradient(top,#a7d1f7,#79aae9); 
+ background:-ms-linear-gradient(top,#a7d1f7,#79aae9); 
+ background:-o-linear-gradient(top,#a7d1f7,#79aae9); 
+ background:linear-gradient(top,#a7d1f7,#79aae9); 
+}
+

@@ -1,0 +1,101 @@
+.appAdminMenuAdd {
+    height: 100%;
+    border-radius: 3px; 
+    border: 1.5px solid #7ea4cf; 
+    width: 65%;
+    position: relative;
+    left: 6%;
+    top: 10%;
+    margin: 10px 0;
+    float: right;
+    margin-right: 15%;
+}
+
+.appAdminMenuAdd .title{
+    float: left;
+    width: 100%;
+    position: relative;
+    left: 1%;
+    font: 24px/20px'OpenSans-Italic', sans-serif;
+    margin-top: 3%;
+    margin-left: 2%;
+   text-align: left;
+}
+
+.appAdminMenuAdd .header{
+    float: left;
+    width: 98%;
+    position: relative;
+	left: 1%;
+	font: 20px/16px'OpenSans-Italic', sans-serif;
+	color:gray;
+	padding: 10px;
+  	text-align: left;
+	margin-top: 1%;
+}
+
+.appAdminMenuAdd .footer{
+    float: left;
+    width: 98%;
+    position: relative;
+	left: 1%;
+	font: 20px/16px'OpenSans-Italic', sans-serif;
+	color:gray;
+	padding: 10px;
+  	text-align: left;
+	margin-top: 1%;
+}
+
+.appAdminMenuAdd  .elementLabelDrop {
+ position: relative;
+ float: left;
+ width:100px;
+ margin-top: 3%;
+}
+.appAdminMenuAdd  .elementValueDrop {
+ position: relative;
+ float: left;
+ width:160px;
+ margin-top: 2%;
+}
+.appAdminMenuAdd  .elementLabelEdit {
+ position: relative;
+ float: left;
+ width:100px;
+ height:25px;
+ margin-left: 10px;
+ margin-top: 2.5%;
+ vertical-align: top;
+}
+
+.appAdminMenuAdd  .elementValueEdit {
+ position: relative;
+ float: left;
+ width:150px;
+ height:25px;
+ margin-top: 2.5%;
+}
+
+.appAdminMenuAdd .elementValueTitle{
+ position: relative;
+ width:730px;
+ height:30px;
+ margin-top: 4%;
+}
+
+
+.appAdminMenuAdd .confirm {
+	float: right;
+	margin-bottom: 2%;
+	width:100%;
+}
+
+.appAdminMenuAdd .menuAddBtn{
+ line-height: 36px;
+ width:  100px;
+ float: left;
+ position: relative;
+ text-decoration: none;
+ display: block;
+}
+

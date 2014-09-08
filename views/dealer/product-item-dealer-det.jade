@@ -1,0 +1,54 @@
+block append
+  div(id='appContent')
+      include nav-progressbar-dealer
+      div.appProductPage(id='appProductPage')
+        if(user && user.username != productsVar[0].advertisementInfo.adv_Username)
+         div.btnFavorite
+          form(id='favoriteForm' role='form', action="/userpanel-product-item-fav",method="post", style='max-width: 100%',
+ onsubmit='',enctype='multipart/form-data')
+           input.form-control.hide(type='text', name='_id',value='#{productsVar[0]._id}',style='display: none')         
+           input.form-control.hide(type='text', name='category',value='service',style='display: none')         
+           a(href='#', onclick='$("#favoriteForm").submit();')
+            span
+             i.icon-eye-open.icon-3x
+        div.title(id='product_sec_1') #{productsVar[0].descriptionInfo.des_Title}
+        div.product_sec_2(id='product_sec_2')
+         div
+          div.picturesServ
+           img(src='#{productsVar[0].imagesAray[0]}') 
+          table.table.divSizeTableServ(cellspacing='0')
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_contact_name}
+               td.value #{productsVar[0].contactInfo.con_Name}
+             tr
+               td.name #{appMenuLangVar[0].product_item_service_catLevel1}
+               td.value #{productsVar[0].categoryInfo.cat_Level1}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_service_catLevel2}
+               td.value #{productsVar[0].categoryInfo.cat_Level2}
+             tr
+               td.name #{appMenuLangVar[0].product_item_contact_city}
+               td.value #{productsVar[0].contactInfo.con_City}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_webpage}
+               td.value 
+                a(href='#{productsVar[0].descriptionInfo.des_WebPage}') #{productsVar[0].descriptionInfo.des_WebPage}
+        div.product_sec_3(id='product_sec_3')        
+        div.product_sec_4(id='product_sec_4')
+           div.sectionHeader #{appMenuLangVar[0].product_item_information}
+           div.sectionText #{productsVar[0].descriptionInfo.des_Info}
+           div.sectionHeader #{appMenuLangVar[0].product_item_contact}
+           div.sectionText 
+             p
+             p #{appMenuLangVar[0].product_item_contact_street}:   #{productsVar[0].contactInfo.con_Street}
+             p #{appMenuLangVar[0].product_item_contact_zip}:      #{productsVar[0].contactInfo.con_Zip}
+             p #{appMenuLangVar[0].product_item_contact_email}:    #{productsVar[0].contactInfo.con_Email}
+             p #{appMenuLangVar[0].product_item_contact_phone_1}:  #{productsVar[0].contactInfo.con_Phone1}
+             p #{appMenuLangVar[0].product_item_contact_phone_2}:  #{productsVar[0].contactInfo.con_Phone2}
+             p #{appMenuLangVar[0].product_item_contact_mobile_1}: #{productsVar[0].contactInfo.con_Mobile1}
+             p #{appMenuLangVar[0].product_item_contact_mobile_2}: #{productsVar[0].contactInfo.con_Mobile2}  
+        div.product_sec_4.appBarBlue(id='product_sec_5',style='height:40px;')
+             p 
+             p(style='float:left;') &nbsp&nbsp&nbsp#{appMenuLangVar[0].product_item_footer_expire}: #{productsVar[0].advertisementInfo.adv_DateExpired.toDateString()}
+             p(style='float:right;') #{appMenuLangVar[0].product_item_footer_viewers}: #{productsVar[0].advertisementInfo.adv_Viewers}&nbsp&nbsp&nbsp
+

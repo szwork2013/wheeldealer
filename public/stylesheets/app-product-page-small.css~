@@ -1,0 +1,42 @@
+.appProductPage  {
+ height: 100%;
+ border-radius: 3px; 
+ border: 1.5px solid #7ea4cf; 
+ width: 70%;
+ position: relative;
+ top: 10%;
+ margin: 10px 0;
+ float: right;
+ margin-right: 5%;	
+}
+
+.appProductPage .title{
+ float: left;
+ width: 80%;
+ position: relative;
+ margin-top: 2%;
+ margin-left: 2%;
+ margin-bottom: 2%;
+ font: 18px/14px'OpenSans-Italic', sans-serif;
+ text-align: left;
+}
+
+.appProductPage .btnFavorite {
+ position: relative;
+ width: 10%;
+ font-size:1px;
+ float:right;
+ margin-top: 1%;
+ background: #FFFFFF;
+ border-color: #FFFFFF;
+}
+.appProductPage .product_sec_2 {
+ width: 100%;
+ height:100%;
+}
+
+.appProductPage .product_sec_3 {
+ width: 100%;
+ height:100%;
+ float: right;
+}

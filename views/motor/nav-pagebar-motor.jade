@@ -1,0 +1,45 @@
+block append
+      div.appMenuPages(id='appMenuPages')
+        #pagesBar.pagesBar
+          selection.pagesBarPage
+            ul
+              if (pageVar > 0)  
+               li
+                a.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') 1
+              if (pageVar > 0)  
+               li
+                a.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/#{parseInt(pageVar)-1}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') <
+              li
+                a.appBtnBackgroundBlue(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{parseInt(pageVar)+1} 
+              if (pageVar < pageCntVar -1) 
+               li
+                a.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/#{parseInt(pageVar)+1}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') >
+               li
+                a.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/#{parseInt(pageCntVar-1)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{pageCntVar}
+          .btn-group(style='float: right;')
+            a.btn.dropdown-toggle.elementValueDrop.appBtnBackgroundGray(data-toggle='dropdown')
+                | #{traPerPageVar}
+                span.caret
+               ul#cat_Level1.dropdown-menu                 
+                 li
+                  a.typeItem(href='/index-motor/#{langVar}/10/#{sortVar}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') 10
+                 li
+                  a.typeItem(href='/index-motor/#{langVar}/20/#{sortVar}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') 20
+                 li
+                  a.typeItem(href='/index-motor/#{langVar}/50/#{sortVar}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') 50
+                 li
+                  a.typeItem(href='/index-motor/#{langVar}/100/#{sortVar}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') 100
+          .btn-group(style='float: right;margin-right:1%')
+            a.btn.dropdown-toggle.elementValueDrop.appBtnBackgroundGray(data-toggle='dropdown')
+                if (sortVar % 2 == 0) 
+                 | &#x25B2 #{appMenuLangVar[0].dropdown_car_sort[sortVar]}
+                else 
+                 | &#x25BC #{appMenuLangVar[0].dropdown_car_sort[sortVar]}
+                span.caret
+               ul#cat_Level1.dropdown-menu                 
+                 each sortItem, i in appMenuLangVar[0].dropdown_car_sort
+                  li
+                   if (i % 2 == 0) 
+                    a.typeItem(href='/index-motor/#{langVar}/#{traPerPageVar}/#{i}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') &#x25B2 #{sortItem}
+                   else   
+                    a.typeItem(href='/index-motor/#{langVar}/#{traPerPageVar}/#{i}/#{searchVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') &#x25BC #{sortItem}

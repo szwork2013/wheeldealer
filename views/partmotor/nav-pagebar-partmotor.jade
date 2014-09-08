@@ -1,0 +1,19 @@
+block append
+      div.appMenuPages(id='appMenuPages')
+        #pagesBar.pagesBar
+          selection.pagesBarPage
+            ul
+              if (pageVar > 0)  
+               li
+                a.appBtnBackgroundGray(href='/index-partmotor/#{langVar}/0/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{catLevel2Var}?menu=#{menuViewVar}') 1
+              if (pageVar > 0)  
+               li
+                a.appBtnBackgroundGray(href='/index-partmotor/#{langVar}/#{parseInt(pageVar)-1}/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{catLevel2Var}?menu=#{menuViewVar}') <
+              li
+                a.appBtnBackgroundBlue(href='/index-partmotor/#{langVar}/#{parseInt(pageVar)}/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{catLevel2Var}?menu=#{menuViewVar}') #{parseInt(pageVar)+1} 
+              if (pageVar < pageCntVar -1) 
+               li
+                a.appBtnBackgroundGray(href='/index-partmotor/#{langVar}/#{parseInt(pageVar)+1}/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{catLevel2Var}?menu=#{menuViewVar}') >
+               li
+                a.appBtnBackgroundGray(href='/index-partmotor/#{langVar}/#{parseInt(pageCntVar-1)}/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{catLevel2Var}?menu=#{menuViewVar}') #{pageCntVar}
+

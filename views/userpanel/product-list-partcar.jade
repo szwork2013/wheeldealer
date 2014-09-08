@@ -1,0 +1,44 @@
+block append
+     div.appProductList(id='appProductList')
+      div.products.category
+        ul.list(id='product-list')
+          each produictItem, i in productsVar 
+           li   
+             div.title
+               a(href='/product-item-partcar/#{langVar}/#{produictItem._id}?menu=#{menuViewVar}') #{produictItem.descriptionInfo.des_Title}
+             div.wrapimg#img_box
+               if (produictItem.imagesAray.length == 0)
+                 img(src='/images/no_picture.jpg') 
+               else
+                 each imageItem, i in produictItem.imagesAray
+                   if(i == 0)
+                    img.imgBox(src='#{imageItem}', data-toggle='modal', data-target='#imgModal', style='cursor:pointer;')
+                   else
+                     img.imgBox.hide(src='#{imageItem}', data-toggle='modal', data-target='#imgModal', style='cursor:pointer;display:none;')             
+             div
+                table.table(cellspacing='0')
+                  tr
+                    td.name #{produictItem.categoryInfo.cat_Level1}
+                    td.name #{produictItem.categoryInfo.cat_Level2}
+                    td.name #{appMenuLangVar[0].dropdown_part_condition[productsVar[0].detailsInfo.det_Condition]}
+                  tr
+                    td.name #{produictItem.detailsInfo.det_Band}
+                    td.name #{produictItem.detailsInfo.det_Model}
+                    td.name #{produictItem.detailsInfo.det_Version}
+                div.prize #{produictItem.detailsInfo.det_Prize}
+script.
+ $(document).ready(function() {   
+  $(document).on('click', '.imgBox', function () {
+     $('#picturesUlModal').empty();
+     $(this).parent().find('img').each(function(){
+        if ($(this).index() == 0) {
+          $('#msg_slideshow_bigModal').empty();
+          $('#msg_slideshow_bigModal').html('<a href="' + $(this).attr('src') + '" > <img src="' + $(this).attr('src') +'" /></a>')
+        }
+        $('#picturesUlModal').append('<li class="boxModal" id="iImage'+ $(this).index() + 'BoxImgModal" > <img src='+$(this).attr('src')+ ' /> </li>')
+        $('#iImage'+$(this).index() +'BoxImgModal').addClass('boxSelected');
+     });
+  });
+ });
+
+      

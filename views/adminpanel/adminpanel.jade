@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')		
+    script(src='/javascripts/vendor/bootstrap.js')
+
+  body
+   block content
+     include adminpanel-menu
+  

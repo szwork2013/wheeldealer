@@ -1,0 +1,28 @@
+block append
+  .appNavCommercialBottom
+    if (commSlide1Var[0])
+     #slider1.slider
+      a(href='/product-item-car/#{langVar}/0/0/#{commSlide1Var[0]._id}/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0?menu=on')
+        img(src='#{commSlide1Var[0].imagesAray[0]}')
+        span.title xxxxxxxxxxxxxxx 
+        span.price #{commSlide1Var[0].detailsInfo.det_Prize}
+    if (commSlide2Var[0])
+     #slider2.slider
+      a(href='/product-item-motor/#{langVar}/0/0/#{commSlide2Var[0]._id}/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0?menu=on')
+        img(src='#{commSlide2Var[0].imagesAray[0]}')
+    if (commSlide3Var[0])
+     #slider3.slider
+      a(href='/product-item-partcar/#{langVar}/#{commSlide3Var[0]._id}?menu=on')
+           img(src='#{commSlide3Var[0].imagesAray[0]}')
+    if (commSlide4Var[0])
+     #slider4.slider
+      a(href='/product-item-partmotor/#{langVar}/#{commSlide4Var[0]._id}?menu=on')
+           img(src='#{commSlide4Var[0].imagesAray[0]}')
+    if (commSlide5Var[0])
+     #slider5.slider
+      a(href='/product-item-dealer/#{langVar}/#{commSlide5Var[0]._id}?menu=on')
+           img(src='#{commSlide5Var[0].imagesAray[0]}')
+    if (commSlide6Var[0])
+     #slider6.slider
+      a(href='/product-item-service/#{langVar}/#{commSlide6Var[0]._id}?menu=on')
+        img(src='#{commSlide6Var[0].imagesAray[0]}')

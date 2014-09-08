@@ -1,0 +1,58 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-commercial.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-contact.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-footer.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+  
+ body
+  block content
+   include nav-commercial-top
+   include nav-navbar-top
+   include nav-navbar-top-mobile
+  .row
+    include footer-contact-mail
+   include footer
+
+script.
+ $(document).ready(function() {
+ if ($('body').height() < $(window).height()) {
+    $('#appFooter').css({'position' : 'absolute', 'bottom' : '0'})
+  }
+   $(document).on('click', '.abrir', function () {
+      $(this).hide();
+      $('#fechar').show();
+      $('#appMenu').hide();
+   });    
+   $(document).on('click', '.fechar', function () {
+      $(this).hide();
+      $('#abrir').show();
+      $('#appMenu').show();
+   });    
+  $(document).on('click', '.abrir', function () {
+      $(this).hide();
+      $('#fechar').show();
+      $('#appMenu').show(1000);
+      $('#appContent').hide(1000);
+   });    
+   $(document).on('click', '.fechar', function () {
+      $(this).hide();
+      $('#abrir').show();
+      $('#appMenu').hide(1000);
+      $('#appContent').show(1000);
+   });    
+ });
+

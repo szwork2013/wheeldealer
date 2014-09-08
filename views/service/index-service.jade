@@ -1,0 +1,64 @@
+doctype html
+html
+  head
+    title= title    
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-pagebar.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-search.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-progressbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-footer.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+  
+body
+block content
+  include ../general/nav-commercial-top
+  include nav-navbar-service
+  include nav-navbar-service-mobile
+  div#Menu.mobileDisplay(style='width:100%;float:left;')
+     if (menuViewVar == 'on')
+      a.abrir(id='abrir', href='?menu=off') &#8801
+      a.fechar.hide(id='fechar', href='?menu=on') &#8801    
+     else
+      a.abrir.hide(id='abrir', href='?menu=off') &#8801
+      a.fechar(id='fechar', href='?menu=on') &#8801    
+  .row
+    if(menuViewVar == 'on') 
+     include nav-menu-service
+    include nav-progressbar-service
+    if (productsVar.length > 0)
+        include nav-pagebar-service
+    include product-list-service
+  include ../footer
+
+script.
+ $(document).ready(function() { 
+
+  if ($('body').height() < $(window).height()) {
+    $('#appFooter').css({'position' : 'absolute', 'bottom' : '0'})
+  }
+
+  $(document).on('click', '.abrir', function () {
+      $(this).hide();
+      $('#fechar').show();
+      $('#appMenu').hide(1000);
+      $('#appContent').show(1000);
+   });    
+   $(document).on('click', '.fechar', function () {
+      $(this).hide();
+      $('#abrir').show();
+      $('#appMenu').show(1000);
+      $('#appContent').hide(1000);
+   });    
+ });
+

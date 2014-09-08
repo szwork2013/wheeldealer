@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-adminpanel-menu-add.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')		
+    script(src='/javascripts/vendor/bootstrap.js')
+
+body
+ block content
+    .row
+     include adminpanel-menu
+     div
+      form(id='adminMenuCarForm' role='form', action="/adminpanel-menu-add-car",method="post", style='max-width: 100%',enctype='multipart/form-data')
+        .appAdminMenuAdd
+           .header Add car:
+           .form-group.form-inline
+             label.control-label.elementLabelEdit(for='dCar') Car:
+             input#dCar.elementValueEdit(type='text', name='dCar')
+           .footer
+            button.menuAddBtn.appBtnBackgroundGray(type='submit') Add             
+      form(id='adminMenuModelForm' role='form', action="/adminpanel-menu-add-car-model",method="post", style='max-width: 100%', onsubmit='',enctype='multipart/form-data')
+        .appAdminMenuAdd
+           .header Add model:
+           .form-group.form-inline
+             label.control-label.elementLabelDrop(for='dCar') Car:
+             .btn-group.elementValueDrop
+               a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                | #{carLabelVar}
+                span.caret
+               ul#dCar.dropdown-menu
+                each carItem, i in carVar 
+                 li
+                  a.typeItem(href='/adminpanel-menu-add-car/1/#{carItem.car}/0/0') #{carItem.car}
+             label.control-label.elementLabelEdit(for='dModel') Model:
+             input#dModel.elementValueEdit(type='text', name='dModel')
+             input.form-control.hide(type='text', name='dCar',      value='#{carLabelVar}' )
+           .footer
+            button.menuAddBtn.appBtnBackgroundGray(type='submit') Add 
+      form(id='adminMenuTypForm' role='form', action="/adminpanel-menu-add-car-typ",method="post", style='max-width: 100%', onsubmit='',enctype='multipart/form-data')
+        .appAdminMenuAdd
+           .header Add type:
+           .form-group.form-inline
+             label.control-label.elementLabelDrop(for='dCar') Car:
+             .btn-group.elementValueDrop
+               a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                | #{carLabelVar}
+                span.caret
+               ul#dCar.dropdown-menu
+                each carItem, i in carVar 
+                 li
+                  a.typeItem(href='/adminpanel-menu-add-car/1/#{carItem.car}/0/0') #{carItem.car}
+             label.control-label.elementLabelDrop(for='dModel') Model:
+             .btn-group.elementValueDrop
+               a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                | #{modelLabelVar}
+                span.caret
+               ul#dModel.dropdown-menu
+                if parseInt(menuLevelVar) > 1
+                 each modelItem, i in modelVar 
+                  li
+                    a.typeItem(href='/adminpanel-menu-add-car/2/#{modelItem.car}/#{modelItem.model}/0') #{modelItem.model}            
+             label.control-label.elementLabelEdit(for='dTyp') Version:
+             input#dCar.elementValueEdit(type='text', name='dTyp')
+             input.form-control.hide(type='text', name='dCar',      value='#{carLabelVar}' )
+             input.form-control.hide(type='text', name='dModel',      value='#{modelLabelVar}' )
+           .footer
+            button.menuAddBtn.appBtnBackgroundGray(type='submit') Add 

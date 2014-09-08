@@ -1,0 +1,109 @@
+@media screen and (max-device-width: 480px) {
+ .appNavCommercialBottom .slider {
+  float: right;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border-radius: 5px;
+  counter-reset: flag;
+  position: relative;
+  margin-top:30px;
+  margin-right:2%;
+  border: 1.5px solid #7ea4cf; 
+  width: 95%;
+  height:170px;
+  min-height:150px;
+ }
+.appNavCommercialBottom .slider img{
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 100%;
+  max-width: 100%;
+ }
+
+ .appNavCommercialCenter {
+  display:none;
+ }
+ .appNavCommercialCenter .comPanelLeft {
+  display:none;
+ }
+ .appNavCommercialCenter .comPanelRight {
+  display:none;
+ }
+}
+
+@media screen and (min-device-width: 481px) {
+.appNavCommercialBottom {
+  margin-top:50px;
+  width:100%;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  border: 1.5px solid #7ea4cf; 
+ }
+
+.appNavCommercialBottom .slider {
+  float: right;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border-radius: 5px;
+  counter-reset: flag;
+  position: relative;
+  margin-top:30px;
+  margin-right:0.6%;
+  border: 1.5px solid #7ea4cf; 
+  width: 16%;
+  height:170px;
+  min-height:150px;
+ }
+ .appNavCommercialBottom .slider img{
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 100%;
+  max-width: 100%;
+ }
+
+ .appNavCommercialCenter {
+  width:60%;
+  float:right;
+  margin-right:10%;
+  height:300px;
+ }
+ .appNavCommercialCenter .comPanelLeft {
+  width: 50%;
+  height:297px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  border-bottom: 2px solid #7ea4cf;
+  border-right: 1px solid #7ea4cf; 
+ }
+ .appNavCommercialCenter .comPanelRight {
+  width: 50%;
+  height:297px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  border-bottom: 2px solid #7ea4cf; 
+  border-left: 1px solid #7ea4cf; 
+  float:right;
+  margin-top:-297px;
+ }
+ .appNavCommercialBottom .price {
+  color: #fff;
+  font-size: 1.1em;
+  background: #7ea4cf;
+  padding: 7px 7px 9px 7px;
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-top: -20px;
+  margin-right: 0px;
+ }
+.appNavCommercialBottom .title {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 7px 7px 9px 7px;
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-top: -160px;
+  margin-left: 0px;
+ }
+}

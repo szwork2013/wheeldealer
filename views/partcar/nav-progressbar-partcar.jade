@@ -1,0 +1,9 @@
+block append
+ div.appBarBlue.appMenuProgres.mobileNotDisplay(id='appMenuProgres')
+      if appMenuLevelVar >= 0
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-partcar/#{langVar}/0/0/0/0?menu=#{menuViewVar}') #{appMenuLangVar[0].nav_menu_top_2}
+      if appMenuLevelVar > 0
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-partcar/#{langVar}/0/1/#{catLevel1Var}/0?menu=#{menuViewVar}') #{catLevel1Var}
+      if appMenuLevelVar > 1 && (catLevel2Var)
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-partcar/#{langVar}/0/2/#{catLevel1Var}/#{catLevel2Var}?menu=#{menuViewVar}') #{catLevel2Var}
+

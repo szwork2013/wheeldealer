@@ -1,0 +1,42 @@
+
+.appProductPage .table {
+ float: right;
+ width: 100%;
+}
+
+.appProductPage .table th, td {
+ margin: 0;
+ padding: 5px 10px;
+ text-align: center;
+/*   	border-bottom: 1px solid #b5b5b5; */
+ width:100%;
+}
+
+.appProductPage .table .name { 
+  text-align:left;
+  vertical-align:top;
+  width:30%;
+ }   
+ .appProductPage .table .value{ 
+  text-align:right;
+  vertical-align:top;
+  width:20%;
+ }   
+ .appProductPage .table .prize{ 
+  color:red;
+ }   
+
+.appProductPage .table tr {
+	background:-webkit-linear-gradient(top,#a7d1f7,#79aae9); 
+	background:-moz-linear-gradient(top,#a7d1f7,#79aae9); 
+	background:-ms-linear-gradient(top,#a7d1f7,#79aae9); 
+	background:-o-linear-gradient(top,#a7d1f7,#79aae9); 
+	background:linear-gradient(top,#a7d1f7,#79aae9);
+	width:100%;
+}
+
+.appProductPage .table tr.alt {
+  	background: #ffffff;
+  	width:100%;
+	}
+	

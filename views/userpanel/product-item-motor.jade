@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/photogallery.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-progressbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-page.css')
+
+    link(rel='stylesheet', href='/stylesheets/app-product-page-table.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-page-gallery.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-page-desc.css')
+
+    link(rel='stylesheet', href='/stylesheets/app-nav-stepbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')		
+    script(src='/javascripts/vendor/bootstrap.js')
+    script(src='/javascripts/vendor/bootstrap-modal.js')
+
+block content
+    if (!user)
+     include ../userlogin/login-login
+    else
+     include ../nav-navbar-top
+     div#Menu.mobileDisplay(style='width:100%;float:left;')
+      if (menuViewVar == 'on')
+       a.abrir(id='abrir', href='?menu=off') &#8801
+       a.fechar.hide(id='fechar', href='?menu=on') &#8801    
+      else
+       a.abrir.hide(id='abrir', href='?menu=off') &#8801
+       a.fechar(id='fechar', href='?menu=on') &#8801
+     .row
+      if(menuViewVar == 'on') 
+       include userpanel-menu
+      include ../motor/product-item-motor-det
+      include userpanel-stepbar-add-finish

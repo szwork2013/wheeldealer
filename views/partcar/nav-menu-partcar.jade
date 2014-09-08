@@ -1,0 +1,21 @@
+block append
+  div.appMenu(id='appMenu')
+        ul.ul-class(id='menu-list')
+         if appMenuLevelVar == 0
+          li
+            a.appBtnBackgroundBlue.btn.mainMenuButtonBack(href='/#{langVar}/') #{appMenuLangVar[0].nav_menu_top_2}
+          each appMenuItem, i in appMenuCatLevel1Var
+           li
+            a.appBtnBackgroundGray.btn.mainMenuButton(href='/index-partcar/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/#{parseInt(appMenuLevelVar)+1}/#{appMenuItem}/0?menu=#{menuViewVar}') #{appMenuItem}
+         if appMenuLevelVar == 1
+          li
+            a.appBtnBackgroundBlue.btn.mainMenuButtonBack(href='/index-partcar/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/#{parseInt(appMenuLevelVar)-1}/0/0?menu=#{menuViewVar}') #{catLevel1Var}
+          if (appMenuModelVar == '')
+          else
+           each appMenuItem, i in appMenuCatLevel2Var
+            li
+             a.appBtnBackgroundGray.btn.mainMenuButton(href='/index-partcar/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{appMenuItem}?menu=#{menuViewVar}') #{appMenuItem}
+         if appMenuLevelVar == 2
+          li
+            a.appBtnBackgroundBlue.btn.mainMenuButtonBack(href='/index-partcar/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/#{parseInt(appMenuLevelVar)-1}/#{catLevel1Var}/0?menu=#{menuViewVar}') #{catLevel2Var}
+

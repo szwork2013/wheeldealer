@@ -1,0 +1,123 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+.appMenuPages .pagesBar {
+  float:left;
+  margin-left:2%;
+  width: 96%;
+  position:relative;
+ }
+.appMenuPages .pagesBarPage li a{
+  cursor:pointer; 
+  line-height:10px;
+  display:block;
+  padding:10px;
+  float:left;
+  width:100%;
+  text-aling:center;
+  font-size:16px;
+  margin-right:2px;
+}
+.appMenuPages .pagesBarPage ul{
+  float:right;
+  margin:0px;
+  padding:10px;
+  list-style:none;
+}
+.appMenuPages .pagesBarPage li{
+  float:left;
+  font-weight:700;
+  margin:0 2px;
+  text-align:center;
+ }
+
+.appMenuPages  .elementLabelDrop {
+  width:200px;
+  margin-left: 40px;
+  margin-top: 5%;
+ }
+
+.appMenuPages  .elementValueDrop {
+  width:160px;
+  margin-top: 5%;
+ }
+.appMenuPages  .elementValueDrop span {
+  position:absolute;
+  right:5px;
+ }
+.appMenuPages .typeItem:hover{
+  cursor: pointer; 
+  cursor: hand;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+.appMenuPages .pagesBar {
+  margin: 0px auto;
+  float:right;
+  margin-right:5%;
+  width: 70%;
+  position:relative;
+ }
+.appMenuPages .pagesBarPage li a{
+  cursor:pointer; 
+  line-height:15px;
+  display:block;
+  padding:5px;
+  float:left;
+  width:25px;
+  text-aling:center;
+}
+
+.appMenuPages .pagesBarPage ul{
+  float:right;
+  margin:0px;
+  padding:10px;
+  list-style:none;
+}
+.appMenuPages .pagesBarPage li{
+  float:left;
+  font-weight:700;
+  margin:0 2px;
+  text-align:center;
+ }
+
+.appMenuPages  .elementLabelDrop {
+  width:300px;
+  margin-left: 40px;
+  margin-top: 5%;
+ }
+
+.appMenuPages  .elementValueDrop {
+  width:160px;
+  margin-top: 5%;
+ }
+.appMenuPages  .elementValueDrop span {
+  position:absolute;
+  right:5px;
+ }
+ .appMenuPages .typeItem:hover{
+  cursor: pointer; 
+  cursor: hand;
+ }
+}
+
+
+
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+.appMenuPages .pagesBarPage li a:hover{
+  color:#000;
+}
+.appMenuPages .pagesBarPage li.selected{
+  color:white; 
+}
+.appMenuPages .pagesBarPage a,
+.appMenuPages .pagesBarPage a:visited{
+  color:#555;
+}
+

@@ -1,0 +1,22 @@
+block append
+  div.mobileNotDisplay(id='appNavbar')
+   .navbar
+     .navbar-inner  
+       a.logo(href='/#{langVar}/') #{appMenuLangVar[0].nav_navbar_top_title}
+       ul.nav.pull-right
+         li
+           if (searchVar == 1) 
+            a#searchBtn.searchBtnOn.navBarBtn(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/0/0/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}',style='color:black;') #{appMenuLangVar[0].nav_navbar_top_search}&nbsp&nbsp
+             i.icon-arrow-up
+           else
+            a#searchBtn.searchBtnOn.navBarBtn(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/1/0/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}',style='color:black;') #{appMenuLangVar[0].nav_navbar_top_search}&nbsp&nbsp
+             i.icon-arrow-down
+         if (!user)          
+          li
+           a.navBarBtn(href='/login/#{langVar}',style='color:black;') #{appMenuLangVar[0].nav_navbar_top_login}&nbsp/&nbsp#{appMenuLangVar[0].nav_navbar_top_signin}&nbsp
+             i.icon-signin
+         else
+          li
+           a.navBarBtn(href='/logout/#{langVar}',style='color:black;') #{appMenuLangVar[0].nav_navbar_top_logout}&nbsp&nbsp
+             i.icon-signout
+

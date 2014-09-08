@@ -1,0 +1,356 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+ .appProductAdd {
+  height: 100%;
+  border-radius: 3px; 
+  border: 1px solid #7ea4cf; 
+  position: relative;
+  top: 10%;
+  float: right;
+  width:100%;
+ }
+ .appProductAdd .header{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 46px/50px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 20px;
+  text-align: left;
+  border-top: 1.5px solid #7ea4cf;
+  margin-top: 3%;
+  height:2%;
+ }
+ .appProductAdd .subheader{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 2%;
+  font: 40px/42px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 20px;
+  text-align: left;
+  margin-top: 1%;
+  height:2%;
+ }
+ .appProductAdd  .elementLabelDrop {
+  width:800px;
+  margin-left: 40px;
+  margin-top: 3%;
+  height:100px;
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementValueDrop {
+  border: 3px solid #7ea4cf; 
+  width:500px;
+  padding:30px;
+  height:100px;
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+  float: right;
+ }
+ .appProductAdd .typeItem{
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+  margin-top:10px;
+ }
+ .appProductAdd  .elementLabelEdit {
+  width:800px;
+  height:100px;
+  margin-left: 40px;
+  margin-top: 4%;
+  vertical-align: top;
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementValueEdit {
+  width:500px;
+  height:100px;
+  float: right;
+  border: 3px solid #7ea4cf; 
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementLabelEditContact {
+  width:800px;
+  height:100px;
+  margin-left: 10%;
+  margin-top: 4%;
+  vertical-align: top;
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementValueEditContact {
+  border: 3px solid #7ea4cf; 
+  width:500px;
+  height:100px;
+  font: 42px/46px'OpenSans-Italic', sans-serif;
+  float:right;
+ }
+.appProductAdd  .elementLabelTitle {
+  width:500px;
+  height:100px;
+  margin-left: 40px;
+  margin-top: 0%;
+  vertical-align: top;
+  margin-bottom:20px;
+  float:left;
+  font: 46px/50px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd .elementValueTitle{
+  width:300px;
+  height:100px;
+  float: right;
+  font: 46px/50px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .checkboxlabel {
+  float: left;
+  width: 90%;
+  margin-left: 5%;
+  font: 46px/50px'OpenSans-Italic', sans-serif;
+  text-align:left;
+ }
+ .appProductAdd  .checkboxValue {
+  min-height:100px;
+  min-width:100px;
+  margin-top:-20px;
+ }
+ .appProductAdd textarea {
+  border: 3px solid #7ea4cf; 
+  float: left;
+  resize: none;
+  margin-left: 8%;
+  width:84%;
+  font-size: 36px;
+  font: 36px/38px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd .pictures {
+  float: left;
+  margin-left: 2%; 
+  width:100%;
+  position: relative;
+ }
+ .appProductAdd .confirm {
+  float: right;
+  margin-bottom: 2%;
+  width:100%;
+ }
+ .wrapping {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+ }
+ .appProductAdd .box {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+  height: 100%;
+  max-height: 180px;
+ }
+ .appProductAdd .box img {
+  width: 170px;
+  height: 170px;
+ }
+ .appProductAdd .box span {
+  display:inline-block;
+  position:absolute; 
+  margin-left:-50px; 
+  top:15px;
+  color:red; 
+ }
+ .appProductAdd .box span:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd .upload {
+  position: relative;
+  margin-top: 5%;
+  display: inline-block;
+  margin-right: 10px;
+  width: 17%;
+  height: 60px;
+ }
+ .appProductAdd .upload:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+ .appProductAdd {
+  height: 100%;
+  border-radius: 3px; 
+  border: 1.5px solid #7ea4cf; 
+  position: relative;
+  top: 10%;
+  margin: 10px 0;
+  float: right;
+  margin-right: 5%;
+  width:70%;
+ }
+.appProductAdd .header{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 20px/16px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 20px;
+  text-align: left;
+  border-top: 1.5px solid #7ea4cf;
+  margin-top: 3%;
+  height:2%;
+ }
+.appProductAdd .subheader{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 3%;
+  font: 16px/18px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 10px;
+  text-align: left;
+ }
+ .appProductAdd  .elementLabelDrop {
+  width:300px;
+  margin-left: 40px;
+  margin-top: 3%;
+ }
+ .appProductAdd  .elementValueDrop {
+  width:160px;
+  margin-top: 3%;
+ }
+ .appProductAdd .typeItem:hover{
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd  .elementLabelEdit {
+  width:300px;
+  height:25px;
+  margin-left: 40px;
+  margin-top: 4%;
+  vertical-align: top;
+ }
+ .appProductAdd  .elementValueEdit {
+  width:160px;
+  height:25px;
+  margin-top: 4%;
+  float: right;
+ }
+ .appProductAdd  .elementLabelEditContact {
+  width:300px;
+  height:25px;
+  margin-left: 10%;
+  margin-top: 4%;
+  vertical-align: top;
+ }
+ .appProductAdd  .elementValueEditContact {
+  width:160px;
+  height:25px;
+  margin-left: 3%;
+  margin-top: 4%;
+  float:right;
+ }
+ .appProductAdd  .elementLabelTitle {
+  width:98%;
+  height:30px;
+  margin-left: 40px;
+  margin-top: 0%;
+  vertical-align: top;
+  margin-bottom:20px;
+  float:left;
+ }
+ .appProductAdd .elementValueTitle{
+  width:160px;
+  height:25px;
+  margin-top: 4%;
+  float: right;
+ }
+ .appProductAdd  .checkboxLine1 {
+  float: left;
+  width: 100%;
+  margin-top: 5%;
+  margin-left: 2%;
+ }
+ .appProductAdd  .checkboxlabel {
+  float: left;
+  width: 20%;
+  margin-left: 5%;
+ }
+ .appProductAdd textarea {
+  float: left;
+  resize: none;
+  margin-left: 8%;
+  width:84%;
+ }
+ .appProductAdd .pictures {
+  float: left;
+  margin-left: 2%; 
+  width:100%;
+  position: relative;
+ }
+ .appProductAdd .confirm {
+  float: right;
+  margin-bottom: 2%;
+  width:100%;
+ }
+ .wrapping {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+ }
+ .appProductAdd .box {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+  height: 100%;
+  max-height: 180px;
+ }
+ .appProductAdd .box img {
+  width: 170px;
+  height: 170px;
+ }
+ .appProductAdd .box span {
+  display:inline-block;
+  position:absolute; 
+  margin-left:-50px; 
+  top:15px;
+  color:red; 
+ }
+ .appProductAdd .box span:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd .upload {
+  position: relative;
+  margin-top: 5%;
+  display: inline-block;
+  margin-right: 10px;
+  width: 17%;
+  height: 30px;
+ }
+ .appProductAdd .upload:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+}
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+.appProductAdd .title{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 24px/20px'OpenSans-Italic', sans-serif;
+  margin-top: 3%;
+  margin-left: 2%;
+  text-align: left;
+ }
+

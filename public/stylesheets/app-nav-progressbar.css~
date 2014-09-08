@@ -1,0 +1,70 @@
+@media screen and (max-width: 480px) {
+.appMenuProgres {
+ display:none;
+}
+}
+
+@media screen and (min-width: 481px) {
+.appMenuProgres {
+ overflow: hidden;
+ counter-reset: flag;
+ position: relative;
+ top: 5%;
+ float:right;
+ margin-right:5%;
+ width: 70%;
+ position:relative;
+}
+}
+
+
+.appMenuProgres a {
+ display: block;
+ float: left;
+ line-height: 36px;
+ padding: 0 10px 0 60px;
+ position: relative;
+ border: 1px solid #7ea4cf;
+ color: gray;
+ font-size: 1em;
+}
+
+.appMenuProgres a:first-child {
+ padding-left: 46px;
+ border-radius: 5px 0 0 5px;
+}
+.appMenuProgres a:first-child:before {
+ left: 14px;
+}
+.appMenuProgres a:last-child {
+ border-radius: 0 5px 5px 0; 
+ padding-right: 20px;
+}
+
+.appMenuProgres a:after {
+ content: '';
+ position: absolute;
+ top: 0; 
+ right: -18px; 
+ width: 36px; 
+ height: 36px;
+ -webkit-transform: scale(0.707) rotate(45deg);
+ transform: scale(0.707) rotate(45deg);
+ z-index: 1000;
+ box-shadow: 
+    2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+    3px -3px 0 2px rgba(255, 255, 255, 0.1);
+ border-radius: 0 5px 0 50px;
+}
+.appMenuProgres a:last-child:after {
+ content: none;
+}
+.appMenuProgres a:before {
+ width: 20px;
+ height: 20px;
+ line-height: 20px;
+ margin: 8px 0; 
+ position: absolute;
+ top: 0;
+ left: 30px; 
+}

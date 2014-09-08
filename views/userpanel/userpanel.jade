@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-login.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+
+  body
+   block content
+    if (!user)
+     include ../userlogin/login-login
+    else
+     include userpanel-nav-commercial-top
+     include ../nav-navbar-top
+     div#Menu.mobileDisplay(style='width:100%;float:left;')
+      if (menuViewVar == 'on')
+       a.abrir(id='abrir', href='?menu=off') &#8801
+       a.fechar.hide(id='fechar', href='?menu=on') &#8801    
+      else
+       a.abrir.hide(id='abrir', href='?menu=off') &#8801
+       a.fechar(id='fechar', href='?menu=on') &#8801    
+     .row
+      if (menuViewVar == 'on')
+       include userpanel-menu
+  

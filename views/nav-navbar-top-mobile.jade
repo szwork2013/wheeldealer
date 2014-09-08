@@ -1,0 +1,22 @@
+block append
+  div.mobileDisplay(id='appNavbar',style='width:100%;')
+   .btn-group(style='width:100%;')
+      button.appBtnBackgroundGray.dropdown-toggle.fullwidthMobile(type='button', data-toggle='dropdown', style='font: normal bold 16px/16px Arial, sans-serif') MENU 
+      ul.dropdown-menu
+         if (!user)         
+          li
+           a.bigFontMobile(href='/login/#{langVar}') #{appMenuLangVar[0].nav_navbar_top_login}&nbsp/&nbsp#{appMenuLangVar[0].nav_navbar_top_signin}&nbsp
+         else
+          li
+           a.bigFontMobile(href='/userpanel/#{langVar}?menu=on') #{appMenuLangVar[0].nav_navbar_top_mypanel}&nbsp&nbsp
+          li
+           a.bigFontMobile(href='/logout/#{langVar}') #{appMenuLangVar[0].nav_navbar_top_logout}&nbsp&nbsp
+          li
+           a.bigFontMobile (href='/userpanel-product-add/en_US/0/0/0/0/0/0?menu=on') #{appMenuLangVar[0].userpanel_menu_1}
+         li
+           a.bigFontMobile(href='') #{appMenuLangVar[0].nav_navbar_top_contact}&nbsp&nbsp
+         li
+           a.bigFontMobile(href='/en_US/') EN
+         li
+           a.bigFontMobile(href='/pl_PL/') PL
+

@@ -1,0 +1,18 @@
+html
+ head
+    meta(http-equiv = 'Content-Type', content = 'text/html; charset=UTF-8')
+    title=subject
+    body
+      h1(style='color:#0F3B75;') #{appMenuLangVar[0].nav_navbar_top_title}
+      p &nbsp
+      p #{appMenuLangVar[0].email_productadd_line1}
+      a(href='http://wheeldealer.ca/product-item-car/#{langVar}/#{productsVar[0]._id}') http://wheeldealer.ca/product-item-car/#{langVar}/#{productsVar[0]._id}
+      p &nbsp
+      p #{appMenuLangVar[0].email_productadd_line2} #{productsVar[0].advertisementInfo.adv_DateExpired.toDateString()}
+      p &nbsp
+      p #{appMenuLangVar[0].email_footer_line1}
+      p &nbsp
+      p #{appMenuLangVar[0].email_footer_line2}
+      p #{appMenuLangVar[0].email_footer_line3}
+      p #{appMenuLangVar[0].email_footer_line4}
+

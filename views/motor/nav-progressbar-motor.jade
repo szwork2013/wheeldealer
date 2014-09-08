@@ -1,0 +1,16 @@
+block append
+ div.appBarBlue.appMenuProgres.mobileNotDisplay(id='appMenuProgres')
+      if appMenuLevelVar >= 0
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/0/0/0/0/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{appMenuLangVar[0].nav_menu_top_3}
+      if appMenuLevelVar > 0
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/1/#{catLevel1Var}/0/0/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{catLevel1Var}
+      if appMenuLevelVar > 1 && (catLevel2Var)
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/2/#{catLevel1Var}/#{catLevel2Var}/0/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{catLevel2Var}
+      if appMenuLevelVar > 2 && (catLevel3Var)
+         a.progressMenuButton.appBtnBackgroundGray(href='/index-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{searchVar}/0/3/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{catLevel3Var}
+
+
+
+
+
+

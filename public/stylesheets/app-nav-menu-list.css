@@ -1,0 +1,184 @@
+@media screen and (max-device-width: 480px) {
+.appMenu {
+  width:100%;
+  position:relative;
+  margin-top:30px;
+ }
+.appMenu .mainMenuButton {
+ float:left;
+ width: 90%; 
+ height: 50px; 
+ border-radius: 5px; 
+ border: 2px solid black; 
+ padding-top: 10px;
+ font: normal bold 16px/16px Arial, sans-serif;
+
+}
+
+.appMenu .mainMenuButtonBack {
+ float:left;
+ width: 99%; 
+ height: 50px; 
+ border-radius: 5px; 
+ border: 2px solid #7ea4cf; 
+ padding-top: 15px;
+ font: normal bold 16px/16px Arial, sans-serif;
+ text-align:left;
+}
+.appMenu .menuSpan {
+ display: block;
+ position: absolute;
+ top: 6px;
+ right: 0;
+ padding: 10px 15px;
+ margin-right: 10px;
+ font: normal bold 12px/12px Arial, sans-serif;
+ background: white;
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+ -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px rgba(255, 255, 255, .1);
+ -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px rgba(255, 255, 255, .1);
+ box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px rgba(255, 255, 255, .1);
+}
+
+.appMenu .btn{ 
+ position: relative;
+ margin:0 7px 6px 0; 
+ margin-right: 0;
+}
+.appMenu .btn:active{
+  top:4px;
+}
+
+.appMenu .btn:before,
+.appMenu .btn:after{
+ position: absolute;
+ content: "";
+ height: 50%;
+ border-radius: 50%;
+ z-index: -1;
+}
+.appMenu .btn:before {
+ width: 90%;
+ left: 5%;
+ top:12%;
+ box-shadow: 0 -10px 7px rgba(0,0,0,0.3);
+}
+.appMenu .btn:active:before {
+ width: 90%;
+ left: 5%;
+ top:12%;
+ box-shadow: 0 0 7px rgba(0,0,0,0.3);
+}
+.appMenu .btn:after {
+ width: 80%;
+ left: 10%;
+ bottom: 9%;
+ box-shadow: 0 10px 7px rgba(0,0,0,0.4);
+}
+.appMenu .btn:active:after {
+ width: 80%;
+ left: 10%;
+ bottom: 9%;
+ box-shadow: 0 0 0 rgba(0,0,0,0.4); 
+}
+
+}
+/******************************************************************************************************/
+
+@media screen and (min-device-width: 481px) {
+.appMenu {
+  float: left;
+  width: 20%;
+  position: relative;
+ }
+
+.appMenu .mainMenuButton {
+  float:left;
+  width: 90%; 
+  height: 35px; 
+  border-radius: 0px; 
+  border: 1px solid black; 
+  padding-left: 20px;
+  text-align:left;
+  color:black;
+  font-size: 1em;
+ }
+
+.appMenu .mainMenuButtonBack {
+  width: 99%; 
+  height: 35px; 
+  border-radius: 0px; 
+  border: 1px solid blue;
+  text-align:left; 
+ }
+.appMenu .menuSpan {
+ display: block;
+ position: absolute;
+ top: 7px;
+ right: 0;
+ padding: 0 10px;
+ margin-right: 10px;
+ font: normal bold 12px/18px Arial, sans-serif;
+ background: white;
+ -webkit-border-radius: 15px;
+ -moz-border-radius: 15px;
+ border-radius: 15px;
+ -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px rgba(255, 255, 255, .1);
+ -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px rgba(255, 255, 255, .1);
+ box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px rgba(255, 255, 255, .1);
+}
+
+.appMenu .btn{ 
+ position: relative;
+ margin:0 5px 4px 0; 
+ margin-right: 0;
+}
+.appMenu .btn:active{
+  top:4px;
+}
+
+.appMenu .btn:before,
+.appMenu .btn:after{
+ position: absolute;
+ content: "";
+ height: 50%;
+ border-radius: 50%;
+ z-index: -1;
+}
+.appMenu .btn:before {
+ width: 90%;
+ left: 5%;
+ top:12%;
+ box-shadow: 0 -7px 4px rgba(0,0,0,0.3);
+}
+.appMenu .btn:active:before {
+ width: 90%;
+ left: 5%;
+ top:12%;
+ box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+.appMenu .btn:after {
+ width: 80%;
+ left: 10%;
+ bottom: 9%;
+ box-shadow: 0 7px 4px rgba(0,0,0,0.4);
+}
+.appMenu .btn:active:after {
+ width: 80%;
+ left: 10%;
+ bottom: 9%;
+ box-shadow: 0 0 0 rgba(0,0,0,0.4); 
+}
+}
+
+.appMenu .iconMenuCar {
+   float:left;
+   padding-top:9px;
+   width:25px;
+   height:25px;
+   background-image:url(../icons/icon_72.png);
+   padding-left:30px;
+}
+

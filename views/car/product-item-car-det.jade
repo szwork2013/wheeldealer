@@ -1,0 +1,98 @@
+block append
+  div(id='appContent')
+      include nav-progressbar-car
+      div.appProductPage(id='appProductPage')
+        if(user && user.username != productsVar[0].advertisementInfo.adv_Username)
+         div.btnFavorite
+          form(id='favoriteForm' role='form', action="/userpanel-product-item-fav",method="post", style='max-width: 100%',
+ onsubmit='',enctype='multipart/form-data')
+           input.form-control.hide(type='text', name='_id',value='#{productsVar[0]._id}',style='display: none')         
+           input.form-control.hide(type='text', name='category',value='car',style='display: none')         
+           a(href='#', onclick='$("#favoriteForm").submit();')
+            span.hint--bottom(data-hint='#{appMenuLangVar[0].product_item_icon_hind_2}')
+             i.icon-eye-open.icon-3x
+           a(data-toggle='modal', data-target='#contactModal',style='float:left;cursor:pointer;')
+            span.hint--bottom(data-hint='#{appMenuLangVar[0].product_item_icon_hind_1}')
+             i.icon-pencil.icon-3x
+        else
+         div.btnFavorite
+           a(href='/login/#{langVar}')
+            span.hint--bottom(data-hint='#{appMenuLangVar[0].product_item_icon_hind_2}')
+             i.icon-eye-open.icon-3x
+           a(href='/login/#{langVar}',style='float:left;cursor:pointer;')
+            span.hint--bottom(data-hint='#{appMenuLangVar[0].product_item_icon_hind_1}')
+             i.icon-pencil.icon-3x
+        div.title(id='product_sec_1') #{productsVar[0].descriptionInfo.des_Title}
+        div.product_sec_2(id='product_sec_2')
+         div
+          include ../general/product-item-det-gallery-box
+         div
+          table.table.divSizeTable(cellspacing='0')
+             tr
+               td.name #{appMenuLangVar[0].product_item_vehicle_catLevel1}
+               td.value #{productsVar[0].categoryInfo.cat_Level1}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_vehicle_catLevel2}
+               td.value #{productsVar[0].categoryInfo.cat_Level2}
+             tr
+               td.name #{appMenuLangVar[0].product_item_vehicle_catLevel3}
+               td.value #{productsVar[0].categoryInfo.cat_Level3}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_year}
+               td.value #{productsVar[0].detailsInfo.det_Year}
+             tr
+               td.name #{appMenuLangVar[0].product_item_body}
+               td.value #{appMenuLangVar[0].dropdown_car_body[productsVar[0].detailsInfo.det_Body]}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_engine}
+               td.value #{productsVar[0].detailsInfo.det_Engine}
+             tr
+               td.name #{appMenuLangVar[0].product_item_fuel}
+               td.value #{appMenuLangVar[0].dropdown_car_fuel[productsVar[0].detailsInfo.det_Fuel]}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_transmition}
+               td.value #{appMenuLangVar[0].dropdown_car_transmition[productsVar[0].detailsInfo.det_Transmition]}
+             tr
+               td.name #{appMenuLangVar[0].product_item_mileage}
+               td.value #{productsVar[0].detailsInfo.det_Mileage}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_color}
+               td.value #{appMenuLangVar[0].dropdown_color[productsVar[0].detailsInfo.det_Color]}
+             tr.alt
+               td.name #{appMenuLangVar[0].product_item_prize}
+               td.value.prize #{productsVar[0].detailsInfo.det_Prize}
+        div.product_sec_3(id='product_sec_3')
+           div.sectionHeader #{appMenuLangVar[0].product_item_options}
+           div.sectionTextHeader #{appMenuLangVar[0].product_item_options_safety}:
+           div.sectionText(style='width:100%;text-align:left;')
+             each selectedItem, i in productsVar[0].optionsSafetyArray              
+              |#{appMenuLangVar[0].product_item_car_opt_safety[i]}
+              if (i < productsVar[0].optionsSafetyArray.length-1)
+               |,&nbsp
+           div.sectionTextHeader #{appMenuLangVar[0].product_item_options_comfort}:
+           div.sectionText(style='width:100%;text-align:left;')
+             each selectedItem, i in productsVar[0].optionsComfortArray
+              |#{appMenuLangVar[0].product_item_car_opt_comfort[i]}
+              if (i < productsVar[0].optionsComfortArray.length-1)
+               |,&nbsp
+        div.product_sec_4(id='product_sec_4')
+           div.sectionHeader #{appMenuLangVar[0].product_item_information}
+           div.sectionText #{productsVar[0].descriptionInfo.des_Info}
+           div.sectionHeader #{appMenuLangVar[0].product_item_contact}
+           div.sectionText 
+             p
+             p #{appMenuLangVar[0].product_item_contact_name}:     #{productsVar[0].contactInfo.con_Name}
+             p #{appMenuLangVar[0].product_item_contact_street}:   #{productsVar[0].contactInfo.con_Street}
+             p #{appMenuLangVar[0].product_item_contact_zip}:      #{productsVar[0].contactInfo.con_Zip}
+             p #{appMenuLangVar[0].product_item_contact_city}:     #{productsVar[0].contactInfo.con_City}
+             p #{appMenuLangVar[0].product_item_contact_country}:  #{productsVar[0].contactInfo.con_Country}
+             p #{appMenuLangVar[0].product_item_contact_email}:    #{productsVar[0].contactInfo.con_Email}
+             p #{appMenuLangVar[0].product_item_contact_phone_1}:  #{productsVar[0].contactInfo.con_Phone1}
+             p #{appMenuLangVar[0].product_item_contact_phone_2}:  #{productsVar[0].contactInfo.con_Phone2}
+             p #{appMenuLangVar[0].product_item_contact_mobile_1}: #{productsVar[0].contactInfo.con_Mobile1}
+             p #{appMenuLangVar[0].product_item_contact_mobile_2}: #{productsVar[0].contactInfo.con_Mobile2}  
+        div.product_sec_4.appBarBlue(id='product_sec_5',style='height:40px;')
+             p 
+             p(style='float:left;') &nbsp&nbsp&nbsp#{appMenuLangVar[0].product_item_footer_expire}: #{productsVar[0].advertisementInfo.adv_DateExpired.toDateString()}
+             p(style='float:right;') #{appMenuLangVar[0].product_item_footer_viewers}: #{productsVar[0].advertisementInfo.adv_Viewers}&nbsp&nbsp&nbsp
+

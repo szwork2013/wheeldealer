@@ -1,0 +1,106 @@
+.appNavSearch {
+   float: right;
+   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+   overflow: hidden;
+   border-radius: 5px;
+   counter-reset: flag;
+   position: relative;
+   margin-top:1%;
+   margin-right:9%;
+   margin-bottom:20px;
+   border: 1.5px solid #7ea4cf; 
+   width: 65%;
+}
+
+.appNavSearch .elementSearchDropLabel {
+
+}
+
+.appNavSearch .elementSearchDropValue {
+ margin-top: 50px;
+ width: 160px;
+ background: #7ea4cf;
+ box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+ color: white;
+}
+.appNavSearch .typeItem:hover{
+ cursor: pointer; 
+ cursor: hand;
+}
+
+.appNavSearch .elementSearchValueEdit {
+ height: 30px;
+ width: 160px;
+ height: 30px;
+ margin-top: 0px;
+}
+
+.appNavSearch .selected {
+ box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+ border: 1.5px solid #7ea4cf; 
+}
+
+.appNavSearch .elementSearchLabelEdit {
+ vertical-align: bottom;
+ text-align: center;
+ margin-right: 10px;
+ margin-left: 10px;
+ margin-top: 20px; 
+ width: 160px;
+}
+
+.appNavSearch .elementSearchLabelEditSelected {
+ vertical-align: bottom;
+ margin-right: 10px;
+ margin-left: 10px;
+ margin-top: 20px; 
+}
+
+.appNavSearch .elementSearchButton {
+ margin-top: 20px;
+ height: 30px;
+ width: 160px;
+ float: right;
+ margin-right: 16%;
+ margin-bottom: 20px;
+}
+
+.appNavSearch .elementCancelButton {
+ margin-top: 20px;
+ height: 30px;
+ width: 160px;
+ float: left;
+ margin-left: 16%;
+ margin-bottom: 20px;
+}
+
+.appNavSearch .elementCloseButton {
+ cursor:pointer;
+ position:absolute;
+ top:0%;
+ right: 0%;
+ width:60px;
+ height:43px;
+ z-index:1425;
+ border: 1.5px solid #7ea4cf; 
+ box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+ background-image:url(../icons/search_close.png);
+}
+
+.appNavSearch .elementHideButton {
+ cursor:pointer;
+ position:absolute;
+ top:0%;
+ right:63px;
+ width:60px;
+ height:43px;
+ z-index:1425;
+ border: 1.5px solid #7ea4cf; 
+ box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+ background-image:url(../icons/search_minimalize.png);
+}
+
+.appNavSearch span {
+  position:absolute;
+  right:5px;
+ }

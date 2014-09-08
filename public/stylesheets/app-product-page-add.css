@@ -1,0 +1,507 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+ .appProductAdd {
+  height: 100%;
+  border-radius: 3px; 
+  border: 1px solid #7ea4cf; 
+  position: relative;
+  float: right;
+  margin-right:1%;
+  width:98%;
+ }
+.appProductAdd .title{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+  margin-top: 4%;
+  margin-left: 10px;
+  text-align: left;
+ }
+ .appProductAdd .header{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+  margin-top: 4%;
+  margin-left: 10px;
+  text-align: left;
+ }
+ .appProductAdd .subheader{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 2%;
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 20px;
+  text-align: left;
+  margin-top: 1%;
+  height:2%;
+ }
+ .appProductAdd  .elementLabelDrop {
+  width:300px;
+  margin-left: 10px;
+  margin-top: 3%;
+  height:30px;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementValueDrop {
+  border: 1px solid #7ea4cf; 
+  width:150px;
+  height:30px;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  float: right;
+  margin-right: 60px;
+ }
+ .appProductAdd .typeItem{
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  margin-top:10px;
+ }
+ .appProductAdd  .elementLabelEdit {
+  width:300px;
+  height:30px;
+  margin-left: 10px;
+  margin-top: 4%;
+  vertical-align: top;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementValueEdit {
+  border: 1px solid #7ea4cf; 
+  width:150px;
+  height:30px;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  float: right;
+  margin-right: 60px;
+ }
+ .appProductAdd  .elementLabelEditContact {
+   width:300px;
+  height:30px;
+  margin-left: 10px;
+  margin-top: 4%;
+  vertical-align: top;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd  .elementValueEditContact {
+ border: 1px solid #7ea4cf; 
+  width:150px;
+  height:30px;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  float: right;
+  margin-right: 60px;
+ }
+.appProductAdd  .elementLabelTitle {
+  width:300px;
+  height:60px;
+  margin-left: 10px;
+  margin-top: 0%;
+  vertical-align: top;
+  margin-bottom:10px;
+  float:left;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd .elementValueTitle{
+  border: 1px solid #7ea4cf; 
+  width:150px;
+  height:30px;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  float: right;
+  margin-right: 60px;
+ }
+.appProductAdd  .elementLabelTitleServ {
+  width:300px;
+  height:60px;
+  margin-left: 10px;
+  margin-top: 0%;
+  vertical-align: top;
+  margin-bottom:10px;
+  float:left;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd .elementValueTitleServ{
+  border: 1px solid #7ea4cf; 
+  width:150px;
+  height:30px;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  float: right;
+  margin-right: 60px;
+ }
+ .appProductAdd  .checkboxlabel {
+  float: left;
+  width: 300px;
+  margin-left: 5%;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  text-align:left;
+ }
+ .appProductAdd  .checkboxValue {
+  min-height:30px;
+  min-width:30px;
+  margin-top:-8px;
+ }
+ .appProductAdd .description {
+  border: 1px solid #7ea4cf; 
+  float: left;
+  resize: none;
+  margin-left: 8%;
+  width:84%;
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd .pictures {
+  float: left;
+  margin-left: 2%; 
+  width:100%;
+  position: relative;
+ }
+ .appProductAdd .descriptionServ {
+  border: 1px solid #7ea4cf; 
+  float: left;
+  resize: none;
+  margin-left: 8%;
+  width:84%;
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+ }
+ .appProductAdd .picturesServ {
+  float: left;
+  margin-left: 2%; 
+  width:100%;
+  position: relative;
+ }
+
+ .appProductAdd .confirm {
+  float: right;
+  margin-bottom: 2%;
+  width:100%;
+ }
+ .wrapping {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+ }
+ .appProductAdd .box {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+  height: 100%;
+  max-height: 180px;
+ }
+ .appProductAdd .box img {
+  width: 170px;
+  height: 170px;
+ }
+ .appProductAdd .box span {
+  display:inline-block;
+  position:absolute; 
+  margin-left:-50px; 
+  top:15px;
+  color:red; 
+ }
+ .appProductAdd .box span:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd .upload {
+  position: relative;
+  margin-top: 5%;
+  display: inline-block;
+  float:left;
+  margin-right: 4px;
+  width: 50px;
+  height: 25px;
+  border: 1px solid #7ea4cf;  
+  border-radius: 3px; 
+
+ }
+ .appProductAdd .upload:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd .uploadServ {
+  position: relative;
+  margin-top: 25%;
+  display: inline-block;
+  margin-right: 10px;
+  width: 100%;
+  height: 30px;
+ }
+ .appProductAdd .uploadServ:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+ .appProductAdd {
+  height: 100%;
+  border-radius: 3px; 
+  border: 1.5px solid #7ea4cf; 
+  position: relative;
+  top: 10%;
+  margin: 10px 0;
+  float: right;
+  margin-right: 5%;
+  width:70%;
+ }
+.appProductAdd .title{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 24px/20px'OpenSans-Italic', sans-serif;
+  margin-top: 3%;
+  margin-left: 2%;
+  text-align: left;
+ }
+.appProductAdd .header{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 1%;
+  font: 20px/16px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 20px;
+  text-align: left;
+  border-top: 1.5px solid #7ea4cf;
+  margin-top: 3%;
+  color:black;
+  height:2%;
+ }
+.appProductAdd .subheader{
+  float: left;
+  width: 98%;
+  position: relative;
+  left: 3%;
+  font: 16px/18px'OpenSans-Italic', sans-serif;
+  color:gray;
+  padding: 10px;
+  text-align: left;
+ }
+.appProductAdd .subheaderServLogo{
+  float: left;
+  width: 25%;
+  position: relative;
+  left: 5%;
+  font: 16px/18px'OpenSans-Italic', sans-serif;
+  color:gray;
+  text-align: left;
+ }
+.appProductAdd .subheaderServDesc{
+  float: right;
+  width: 70%;
+  position: relative;
+  font: 16px/18px'OpenSans-Italic', sans-serif;
+  color:gray;
+  text-align: left;
+ }
+.appProductAdd .subheaderServDescShort{
+  float: right;
+  width: 70%;
+  position: relative;
+  font: 16px/18px'OpenSans-Italic', sans-serif;
+  color:gray;
+  text-align: left;
+  margin-top:40px;
+ }
+ .appProductAdd  .elementLabelDrop {
+  width:360px;
+  margin-left: 40px;
+  margin-top: 3%;
+  height:30px;
+ }
+ .appProductAdd  .elementValueDrop {
+  width:240px;
+  margin-top: 3%;
+  height:30px;
+ }
+ .appProductAdd .typeItem:hover{
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd  .elementLabelEdit {
+  width:300px;
+  height:30px;
+  margin-left: 40px;
+  margin-top: 4%;
+  vertical-align: top;
+ }
+ .appProductAdd  .elementValueEdit {
+  width:160px;
+  height:30px;
+  float: right;
+  text-align: right;
+ }
+ .appProductAdd  .elementLabelEditContact {
+  width:300px;
+  height:30px;
+  margin-left: 15%;
+  margin-top: 4%;
+  vertical-align: top;
+ }
+ .appProductAdd  .elementValueEditContact {
+  width:300px;
+  height:30px;
+  margin-left: 3%;
+  float:right;
+ }
+/* .appProductAdd  .elementLabelTitle {
+  width:600px;
+  height:30px;
+  margin-left: 40px;
+  margin-top: 0%;
+  vertical-align: top;
+  float:left;
+ }
+*/
+ .appProductAdd .elementValueTitle{
+  margin-left: 40px;
+  width:600px;
+  height:30px;
+  float: left;
+ }
+ .appProductAdd  .elementLabelTitleServ {
+  width:80%;
+  height:30px;
+  margin-right: 5%;
+  margin-top: 0%;
+  vertical-align: top;
+  margin-bottom:20px;
+  float:right;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+  color:black;
+ }
+ .appProductAdd .elementValueTitleServ{
+  width: 81.5%;
+  height:30px;
+  float: right;
+ }
+ .appProductAdd  .checkboxLine1 {
+  float: left;
+  width: 100%;
+  margin-top: 5%;
+  margin-left: 2%;
+ }
+ .appProductAdd  .checkboxlabel {
+  float: left;
+  width: 20%;
+  margin-left: 5%;
+ }
+ .appProductAdd .desctiption {
+  float: left;
+  resize: none;
+  margin-left: 8%;
+  width:84%;
+ }
+ .appProductAdd .pictures {
+  float: left;
+  margin-left: 2%; 
+  width:100%;
+  position: relative;
+ }
+ .appProductAdd .desctiptionServ {
+  float: right;
+  resize: none;
+  margin-right: 5%;
+  width:65%;
+  margin-top:10px;
+ }
+ .appProductAdd .desctiptionServShort {
+  float: right;
+  resize: none;
+  margin-right: 30%;
+  width:40%;
+  margin-top:10px;
+  resize: none;
+  overflow:auto;
+ }
+ .appProductAdd .picturesServ {
+  float: left;
+  margin-left: 5%; 
+  margin-top:10px;
+  width:20%;
+  position: relative;
+  height 
+ }
+ .appProductAdd .picturesServ img {
+  border: 1px solid #7ea4cf;
+ } 
+ .appProductAdd .confirm {
+  float: right;
+  margin-bottom: 2%;
+  width:100%;
+ }
+ .wrapping {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+ }
+ .appProductAdd .box {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+  height: 100%;
+  max-height: 180px;
+ }
+ .appProductAdd .box img {
+  width: 170px;
+  height: 170px;
+ }
+ .appProductAdd .box span {
+  display:inline-block;
+  position:absolute;
+  margin-left:-65px; 
+  top:5px;
+  color:red; 
+  z-index:2;
+ }
+ .appProductAdd .box span:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+ .appProductAdd .upload {
+  position: relative;
+  margin-top: 5%;
+  display: inline-block;
+  margin-right: 10px;
+  width: 17%;
+  height: 30px;
+ }
+ .appProductAdd .upload:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+.appProductAdd .uploadServ {
+  position: relative;
+  margin-top: 25%;
+  display: inline-block;
+  margin-right: 10px;
+  width: 100%;
+  height: 30px;
+  text-align:center;
+  padding-top:8px;
+  color:black;
+ }
+ .appProductAdd .uploadServ:hover {
+  cursor: pointer; 
+  cursor: hand;
+ }
+}
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+
+.appProductAdd .elementLabelDrop span {
+ position:absolute;
+ right:5px;
+}
+

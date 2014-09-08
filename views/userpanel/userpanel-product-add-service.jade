@@ -1,0 +1,264 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-page-add.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-progressbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-stepbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-login.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-contact.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+    script(src='/javascripts/vendor/bootstrap-dropdown.js')
+
+body
+ block content
+ if (!user)
+    include ../userlogin/login-login
+ else
+    include userpanel-nav-commercial-top
+    include ../nav-navbar-top
+    div#Menu.mobileDisplay(style='width:100%;float:left;')
+     if (menuViewVar == 'on')
+      a.abrir(id='abrir', href='?menu=off') &#8801
+      a.fechar.hide(id='fechar', href='?menu=on') &#8801    
+     else
+      a.abrir.hide(id='abrir', href='?menu=off') &#8801
+      a.fechar(id='fechar', href='?menu=on') &#8801
+    .row
+     if(menuViewVar == 'on') 
+      include userpanel-menu
+     include userpanel-progressbar
+     div(id='appContent')
+      form(id='productForm' role='form', action="/userpanel-product-add-submit-service/#{langVar}/service?menu=#{menuViewVar}",method="post", style='max-width: 100%', onsubmit='return validateForm();',enctype='multipart/form-data')
+        .appProductAdd
+         .title #{appMenuLangVar[0].product_add_service_section_1_title}:
+          .form-group.form-inline
+            label.control-label.elementLabelDrop(for='cat_Level1') #{appMenuLangVar[0].product_item_service_catLevel1}:
+             .btn-group(style='float: right;')
+               a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                | #{catLevel1LabelVar}
+                span.caret
+               ul#cat_Level1.dropdown-menu
+                each catLevel1Item, i in catLevel1Var 
+                 li
+                  a.typeItem(href='/userpanel-product-add/#{langVar}/service/1/#{catLevel1Item.cat_Level1}/0/0/0?menu=#{menuViewVar}') #{catLevel1Item.cat_Level1}
+            if (menuLevelVar > 0)
+             if (catLevel2Var.length > 0)
+              label.control-label.elementLabelDrop(for='cat_Level2') #{appMenuLangVar[0].product_item_service_catLevel2}:
+               .btn-group(style='float: right;')
+                 a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                  | #{catLevel2LabelVar}
+                  span.caret
+                 ul#cat_Level2.dropdown-menu
+                  if parseInt(menuLevelVar) > 0
+                   each catLevel2Item, i in catLevel2Var 
+                    li
+                      a.typeItem(href='/userpanel-product-add/#{langVar}/service/2/#{catLevel2Item.cat_Level1}/#{catLevel2Item.cat_Level2}/0/0?menu=#{menuViewVar}') #{catLevel2Item.cat_Level2}
+            if (menuLevelVar > 1)
+             if (catLevel3Var.length > 0)
+              label.control-label.elementLabelDrop(for='cat_Level3') #{appMenuLangVar[0].product_item_car_catLevel3}:
+               .btn-group(style='float: right;')
+                 a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                  | #{catLevel3LabelVar}
+                  span.caret
+                 ul#cat_Level3.dropdown-menu
+                  if parseInt(menuLevelVar) > 1
+                   each catLevel3Item, i in catLevel3Var 
+                    li
+                     a.typeItem(href='/userpanel-product-add/#{langVar}/service/3/#{catLevel3Item.cat_Level1}/#{catLevel3Item.cat_Level2}/#{catLevel3Item.cat_Level3}/0?menu=#{menuViewVar}') #{catLevel3Item.cat_Level3}
+         .form-group.form-inline
+          input.form-control.hide(type='text', name='cat_Level1',      value='#{catLevel1LabelVar}' )
+          if (menuLevelVar > 1)
+           input.form-control.hide(type='text', name='cat_Level2',     value='#{catLevel2LabelVar}' )
+          if (menuLevelVar > 2)
+           input.form-control.hide(type='text', name='cat_Level3',     value='#{catLevel3LabelVar}' )     
+         .header #{appMenuLangVar[0].product_add_section_2_title}:
+          .form-group.form-inline(style='margin-top:20px;')
+             label.control-label.elementLabelTitleServ(for='des_Title') #{appMenuLangVar[0].product_add_advTitle}:
+              input#des_Title.elementValueTitleServ(type='text', name='des_Title',maxlength ='25') 
+          .form-group.form-inline(style='margin-top:20px;')
+             label.control-label.elementLabelTitleServ(for='des_WebPage') #{appMenuLangVar[0].product_item_webpage}:
+              input#des_WebPage.elementValueTitleServ(type='text', name='des_WebPage',maxlength ='25') 
+          .subheaderServLogo #{appMenuLangVar[0].product_add_services_logo}:
+          .subheaderServDesc #{appMenuLangVar[0].product_add_services_desc}:
+          .picturesServ(id='pictures')
+           div
+             ul.wrapping(id='picturesUl')
+              li.box(id='iImage1img')
+                  img(src='/images/no_picture.jpg')                   
+                  input.form-control(type='text', name='iImage1ind', value='none',style='display: none' )
+           input#iImage1(type="file", name="iImage1",style='display: none')  
+           div.uploadServ.appBtnBackgroundGray(onclick='selectFile("iImage1");') #{appMenuLangVar[0].product_add_section_file_upload}
+          textarea#des_Info.desctiptionServ(rows='10', cols='50', maxlength='1020', name='des_Info')
+          .subheaderServDescShort #{appMenuLangVar[0].product_add_services_desc_short}:
+          textarea#des_InfoShort.desctiptionServShort(rows='7', cols='50',maxlength='356' name='des_InfoShort' )
+         .header #{appMenuLangVar[0].product_add_section_6_title}:
+          .form-group.form-inline
+             label.control-label.elementLabelEditContact(for='cName') #{appMenuLangVar[0].product_item_contact_name}
+              input#con_Name.elementValueEditContact(type='text', name='con_Name', value='#{user.contactInfo.con_Name}')
+             label.control-label.elementLabelEditContact(for='con_Email') #{appMenuLangVar[0].product_item_contact_email}
+              input#con_Email.elementValueEditContact(type='text', name='con_Email', value='#{user.contactInfo.con_Email}')
+             label.control-label.elementLabelEditContact(for='con_Street') #{appMenuLangVar[0].product_item_contact_street}
+              input#con_Street.elementValueEditContact(type='text', name='con_Street',value='#{user.contactInfo.con_Street}')
+             label.control-label.elementLabelEditContact(for='con_Zip') #{appMenuLangVar[0].product_item_contact_zip}
+              input#con_Zip.elementValueEditContact(type='text', name='con_Zip', value='#{user.contactInfo.con_Zip}')
+             label.control-label.elementLabelEditContact(for='con_City') #{appMenuLangVar[0].product_item_contact_city}
+              input#con_Zip.elementValueEditContact(type='text', name='con_City', value='#{user.contactInfo.con_City}')
+             label.control-label.elementLabelEditContact(for='con_Country') #{appMenuLangVar[0].product_item_contact_country}
+              input#con_Country.elementValueEditContact(type='text', name='con_Country', value='#{user.contactInfo.con_Country}')
+             label.control-label.elementLabelEditContact(for='con_Phone1') #{appMenuLangVar[0].product_item_contact_phone_1}
+              input#con_Phone1.elementValueEditContact(type='text', name='con_Phone1',value='#{user.contactInfo.con_Phone1}')
+             label.control-label.elementLabelEditContact(for='con_Phone2') #{appMenuLangVar[0].product_item_contact_phone_2}
+              input#con_Phone2.elementValueEditContact(type='text', name='con_Phone2', value='#{user.contactInfo.con_Phone2}')
+             label.control-label.elementLabelEditContact(for='con_Mobile1') #{appMenuLangVar[0].product_item_contact_mobile_1}
+              input#con_Mobile1.elementValueEditContact(type='text', name='con_Mobile1', value='#{user.contactInfo.con_Mobile1}')
+             label.control-label.elementLabelEditContact(for='con_Mobile2') #{appMenuLangVar[0].product_item_contact_mobile_2}
+              input#con_Mobile2.elementValueEditContact(type='text', name='con_Mobile2', value='#{user.contactInfo.con_Mobile2}')
+             p
+        include userpanel-stepbar-add-next
+   
+script.
+ $(document).ready(function() {
+
+   window.onresize=function(){
+     var listItems = $('#picturesUl li');
+     listItems.each(function(idx, li) {
+       var product = $(li);
+       $(this).width($('#pictures').width());
+       $(this).height($('#pictures').width());
+       $(this).find('img').height($('#pictures').width());
+       $(this).find('img').width($('#pictures').width());
+      $('#pictures').height($('#pictures').width() + 50);
+   });
+  }; 
+
+   var listItems = $('#picturesUl li');
+   listItems.each(function(idx, li) {
+     var product = $(li);
+     $(this).width($('#pictures').width());
+     $(this).height($('#pictures').width());
+     $(this).find('img').height($('#pictures').width());
+     $(this).find('img').width($('#pictures').width());
+
+     $('#pictures').height($('#pictures').width() + 70);
+   });
+
+   $(document).on('click', '.typeItem', function () {
+      var selector = 'input[name=' + $(this).parent().parent().attr('id') + ']';
+      $(selector).val($(this).data('index'));
+
+      $(this).parents(".btn-group").find('.btn').html($(this).text()+" <span class=\"caret\"></span>");
+   });
+
+   $(document).on('click', '.imgRemove', function () {
+     var idSrt = $(this).parent().parent().attr('id');
+     var inputFileId = '#' + idSrt.substring(0,idSrt.length - 3);
+     $(inputFileId).val('');
+     $(this).parent().parent().html('<img src="/images/no_picture.jpg"/> <input class="form-control" type="text" name='+ idSrt.substring(0,idSrt.length - 3) +'ind ' + 'value="deleted" style="display: none" />');
+  var listItems = $('#picturesUl li');
+   listItems.each(function(idx, li) {
+     var product = $(li);
+     $(this).width($('#pictures').width());
+     $(this).height($('#pictures').width());
+     $(this).find('img').height($('#pictures').width());
+     $(this).find('img').width($('#pictures').width());
+
+     $('#pictures').height($('#pictures').width() + 70);
+   });
+
+   });
+ });
+ 
+ function validateForm() {
+    if (parseInt(#{menuLevelVar}) == 0) {
+      alert("#{appMenuLangVar[0].product_add_car_error_1}");
+      return false;    
+    }
+
+   if (parseInt(#{menuLevelVar}) == 1  && $('#cat_Level2').children("li").length > 0) {
+      alert("#{appMenuLangVar[0].product_add_car_error_2}"); 
+      return false;
+   }
+
+   if (parseInt(#{menuLevelVar}) == 2  && $('#cat_Level3').children("li").length > 0) {
+      alert("#{appMenuLangVar[0].product_add_car_error_3}"); 
+      return false;
+   }
+
+   if ($('#dTitle').val() == '') {
+      alert("#{appMenuLangVar[0].product_add_car_error_4}"); 
+      return false;
+   }
+
+    
+    try {
+   
+     } catch (err) {
+        alert(err);
+        return false;
+      }
+      return true;
+ };
+ 
+ function selectFile(id) {  
+    var idStr = '' + id;
+    document.getElementById(idStr).click();  
+ };
+ 
+ function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          //var span = document.createElement('span');
+          var img = document.getElementById(evt.target.id + 'img');
+          img.innerHTML = ['<input class="form-control" name=' + evt.target.id + 'ind ' + 'value="new" style="display: none" type="text"/>' +
+                           '<img src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>' + 
+                           '<span> <i class="imgRemove icon-remove-circle icon-3x"/> </span>'
+                           ].join('');
+            var listItems = $('#picturesUl li');
+   listItems.each(function(idx, li) {
+     var product = $(li);
+     $(this).width($('#pictures').width());
+     $(this).height($('#pictures').width());
+     $(this).find('img').height($('#pictures').width());
+     $(this).find('img').width($('#pictures').width());
+
+     $('#pictures').height($('#pictures').width() + 70);
+   });
+  
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  };
+
+  document.getElementById('iImage1').addEventListener('change', handleFileSelect, false);
+

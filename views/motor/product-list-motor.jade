@@ -1,0 +1,48 @@
+block append
+     div.appProductList(id='appProductList')
+      div.products.category
+        ul.list(id='product-list')
+          each produictItem, i in productsVar 
+           li   
+             div.title
+               a(href='/product-item-motor/#{langVar}/#{traPerPageVar}/#{sortVar}/#{produictItem._id}/#{searchVar}/0/#{parseInt(appMenuLevelVar)+1}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}') #{produictItem.descriptionInfo.des_Title}
+             div.wrapimg#img_box
+               if (produictItem.imagesAray.length == 0)
+                 img(src='/images/no_picture.jpg') 
+               else
+                 each imageItem, i in produictItem.imagesAray
+                   if(i == 0)
+                    img.imgBox(src='#{imageItem}', data-toggle='modal', data-target='#imgModal', style='cursor:pointer;')
+                   else
+                     img.imgBox.hide(src='#{imageItem}', data-toggle='modal', data-target='#imgModal', style='cursor:pointer;display:none;')             
+             div
+                table.table(cellspacing='0')
+                  tr
+                    td.name #{produictItem.categoryInfo.cat_Level1}
+                    td.name #{produictItem.categoryInfo.cat_Level2}
+                    td.name #{produictItem.categoryInfo.cat_Level3}
+                    td.name.mobileNotDisplay #{produictItem.detailsInfo.det_Year}
+                    td.name.mobileNotDisplay #{appMenuLangVar[0].dropdown_motor_body[produictItem.detailsInfo.det_Body]}
+                  tr
+                    td.name #{produictItem.detailsInfo.det_Engine}
+                    td.name #{appMenuLangVar[0].dropdown_car_fuel[produictItem.detailsInfo.det_Fuel]}
+                    td.name #{appMenuLangVar[0].dropdown_car_transmition[produictItem.detailsInfo.det_Transmition]}                                         
+                    td.name.mobileNotDisplay #{produictItem.detailsInfo.det_Mileage}
+                    td.name.mobileNotDisplay #{appMenuLangVar[0].dropdown_motor_drive[produictItem.detailsInfo.det_DriveType]}
+                div.prize #{produictItem.detailsInfo.det_Prize}
+script.
+ $(document).ready(function() {   
+  $(document).on('click', '.imgBox', function () {
+     $('#picturesUlModal').empty();
+     $(this).parent().find('img').each(function(){
+        if ($(this).index() == 0) {
+          $('#msg_slideshow_bigModal').empty();
+          $('#msg_slideshow_bigModal').html('<a href="' + $(this).attr('src') + '" > <img src="' + $(this).attr('src') +'" /></a>')
+        }
+        $('#picturesUlModal').append('<li class="boxModal" id="iImage'+ $(this).index() + 'BoxImgModal" > <img src='+$(this).attr('src')+ ' /> </li>')
+        $('#iImage'+$(this).index() +'BoxImgModal').addClass('boxSelected');
+     });
+  });
+ });
+
+      

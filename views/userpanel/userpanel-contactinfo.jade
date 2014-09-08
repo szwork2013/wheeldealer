@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/photogallery.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-pagebar.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-page-add.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-login.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-stepbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+    script(src='/javascripts/vendor/bootstrap-dropdown.js')
+
+
+block content
+ if (!user)
+  include ../userlogin/login-login 
+ else
+  include userpanel-nav-commercial-top
+  include ../nav-navbar-top
+  .row
+   include userpanel-menu             
+   div(id='appContent')
+      form(id='userForm' role='form', action="/userpanel-contactinfo-update/#{langVar}?menu=#{menuViewVar}",method="post", style='max-width: 100%', onsubmit='return validateForm();',enctype='multipart/form-data')
+       .appProductAdd
+         .header #{appMenuLangVar[0].product_add_section_6_title}:
+          .form-group.form-inline
+             label.control-label.elementLabelEditContact(for='cName') #{appMenuLangVar[0].product_item_contact_name}
+              input#con_Name.elementValueEditContact(type='text', name='con_Name', value='#{user.contactInfo.con_Name}')
+             label.control-label.elementLabelEditContact(for='con_Email') #{appMenuLangVar[0].product_item_contact_email}
+              input#con_Email.elementValueEditContact(type='email', name='con_Email', value='#{user.contactInfo.con_Email}', required)
+             label.control-label.elementLabelEditContact(for='con_Street') #{appMenuLangVar[0].product_item_contact_street}
+              input#con_Street.elementValueEditContact(type='text', name='con_Street', value='#{user.contactInfo.con_Street}')
+             label.control-label.elementLabelEditContact(for='con_Zip') #{appMenuLangVar[0].product_item_contact_zip}
+              input#con_Zip.elementValueEditContact(type='text', name='con_Zip', value='#{user.contactInfo.con_Zip}')
+             label.control-label.elementLabelEditContact(for='con_City') #{appMenuLangVar[0].product_item_contact_city}
+              input#con_Zip.elementValueEditContact(type='text', name='con_City', value='#{user.contactInfo.con_City}')
+             label.control-label.elementLabelEditContact(for='con_Country') #{appMenuLangVar[0].product_item_contact_country}
+              input#con_Country.elementValueEditContact(type='text', name='con_Country', value='#{user.contactInfo.con_Country}')
+             label.control-label.elementLabelEditContact(for='con_Phone1') #{appMenuLangVar[0].product_item_contact_phone_1}
+              input#con_Phone1.elementValueEditContact(type='text', name='con_Phone1', value='#{user.contactInfo.con_Phone1}')
+             label.control-label.elementLabelEditContact(for='con_Phone2') #{appMenuLangVar[0].product_item_contact_phone_2}
+              input#con_Phone2.elementValueEditContact(type='text', name='con_Phone2', value='#{user.contactInfo.con_Phone2}')
+             label.control-label.elementLabelEditContact(for='con_Mobile1') #{appMenuLangVar[0].product_item_contact_mobile_1}
+              input#con_Mobile1.elementValueEditContact(type='text', name='con_Mobile1', value='#{user.contactInfo.con_Mobile1}')
+             label.control-label.elementLabelEditContact(for='con_Mobile2') #{appMenuLangVar[0].product_item_contact_mobile_2}
+              input#con_Mobile2.elementValueEditContact(type='text', name='con_Mobile2', value='#{user.contactInfo.con_Mobile2}')
+             p
+        include userpanel-stepbar-contact-save

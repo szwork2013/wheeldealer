@@ -1,0 +1,37 @@
+block append
+  #imgModal.modal.fade.hide(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+            button.close.hide#imgModalClose(type='button', data-dismiss='modal', aria-hidden='true') ×
+            div.appProductPageModal
+             div.msg_slideshowModal(id='msg_slideshowModal')
+              div(id='msg_slideshow_bigModal')      
+               if (productsVar[0])     
+                if (productsVar[0].imagesAray.length == 0)
+                 a
+                 img(src='/images/no_picture.jpg') 
+                else
+                 a(href='#{productsVar[0].imagesAray[0]}')
+                  img(src='#{productsVar[0].imagesAray[0]}')   
+              div.ico_slideshow_smallModal
+               ul.wrapping(id='picturesUlModal')
+                if (productsVar[0]) 
+                 each imageItem, i in productsVar[0].imagesAray
+                  li.boxModal(id='iImage#{i}BoxImgModal')
+                   img(src='#{imageItem}')
+script.
+ $(document).ready(function() {   
+  $('#iImage0BoxImgModal').addClass('boxSelected');
+
+   $(document).on('click', '.boxModal', function () {
+     
+     $('#picturesUlModal').find('li').each(function(){
+        $(this).removeClass('boxSelected');
+     });
+     $(this).addClass('boxSelected');
+     $(this).find('img').each(function(){
+           $('#msg_slideshow_bigModal').empty();
+           $('#msg_slideshow_bigModal').html('<a> <img src='+$(this).attr('src')+' data-toggle="modal" data-target="#imgModal"  style="cursor:pointer;"/> </a>')        
+         });
+   });
+ });

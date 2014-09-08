@@ -1,0 +1,6 @@
+db.products_car.remove( {"advertisementInfo.adv_Status" : "unconfirmed"} )
+db.products_motor.remove( {"advertisementInfo.adv_Status" : "unconfirmed"} )
+db.products_partcar.remove( {"advertisementInfo.adv_Status" : "unconfirmed"} )
+db.products_partmotor.remove( {"advertisementInfo.adv_Status" : "unconfirmed"} )
+db.products_service.remove( {"advertisementInfo.adv_Status" : "unconfirmed"} )
+db.products_dealer.remove( {"advertisementInfo.adv_Status" : "unconfirmed"} )

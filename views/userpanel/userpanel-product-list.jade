@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/photogallery.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-pagebar.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-login.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+    script(src='/javascripts/vendor/bootstrap-dropdown.js')
+
+
+block content
+ if (!user)
+  include ../userlogin/login-login 
+ else
+  include userpanel-nav-commercial-top
+  include ../nav-navbar-top
+  .row
+   include userpanel-menu
+   if (categoryVar == 'car')
+     include product-list-car
+   if (categoryVar == 'motor')
+     include product-list-motor
+   if (categoryVar == 'partcar')
+     include product-list-partcar
+   if (categoryVar == 'partmotor')
+     include product-list-partmotor
+   if (categoryVar == 'service')
+     include product-list-service
+   if (categoryVar == 'dealer')
+     include product-list-dealer
+   include product-remove-modal            
+
+ 
+

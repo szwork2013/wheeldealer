@@ -1,0 +1,84 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+.appProductPage  {
+  border-radius: 1px; 
+  border: 1.5px solid #7ea4cf; 
+  width: 90%;
+  position: relative;
+  top: 10%;
+  float: right;
+  margin-right:2%;
+ }
+ .appProductPage .title{
+  float: left;
+  width: 70%;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  font: 22px/22px'OpenSans-Italic', sans-serif;
+  text-align: left;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+ .appProductPage  {
+  height: 100%;
+  border-radius: 3px; 
+  border: 1.5px solid #7ea4cf; 
+  width: 70%;
+  position: relative;
+  top: 10%;
+  margin: 10px 0;
+  float: right;
+  margin-right: 5%;	
+ }
+ .appProductPage .title{
+  float: left;
+  width: 80%;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  font: 24px/20px'OpenSans-Italic', sans-serif;
+  text-align: left;
+ }
+}
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+.appProductPage .btnFavorite {
+ position: relative;
+ width: 10%;
+ float:right;
+ margin-top: 1%;
+ background: #FFFFFF;
+ border-color: #FFFFFF;
+}
+
+.appProductPage .btnFavorite a{
+ color:#FF8C00;
+}
+
+.appProductPage .product_sec_2 {
+  width: 100%;
+  height:100%;
+  margin-bottom:20px;
+ }
+
+.appProductPage .product_sec_3 {
+ width: 100%;
+ height:100%;
+ float: right;
+ margin-bottom:30px;
+}
+
+.appProductPage .product_sec_4 {
+ width: 100%;
+ height:100%;
+ float: right;
+}

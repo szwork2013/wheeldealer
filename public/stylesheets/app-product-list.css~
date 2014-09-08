@@ -1,0 +1,316 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+.appProductList {
+  float:left;
+  margin-left:2%;
+  width: 96%;
+  position:relative;
+ }
+.appProductList .products .list li .title {
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+  width: 90%;
+  float: left;
+  margin-left: 30%;
+  margin-bottom: 2%;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background: transparent;
+  font-weight: bold;
+ }
+.appProductList .products .list li .wrapimg {
+  cursor: pointer;
+  float: left;
+  margin: 0 13px 0 0;
+  width: 30%;
+  position: relative;
+  border-right: 1.5px solid black; 
+  border-left: 1.5px solid black; 
+}
+.appProductList .products .list li .wrapimg img {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 100%;
+  min-height: 120px;
+ }
+.appProductList .table {
+  margin-top: 30px;
+  position: absolute;
+  float: bottom;	
+  width: 70%;
+  float: right;
+  right: 0%;
+ }
+.appProductList .table .name { 
+  text-align:left;
+  vertical-align:top;
+  width:33%;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+.appProductList .prize {
+  float: right;
+  right: 0%;
+  bottom: 5%;
+  position: absolute;
+  font-weight: bold;
+  color: #a20000;
+  font: 14px/14px'OpenSans-Italic', sans-serif;
+ }
+.appProductList .products ul li {
+  float: left;
+  width: 98%;
+  height: 120px;
+  position: relative;
+  border-bottom: 1px solid #7ea4cf;
+ }
+.appProductList .table th, td {
+  margin: 0;
+  text-align: center;
+  border-top:    1px solid #b5b5b5; 
+  border-bottom: 1px solid #dcdcdc; 
+  width:100%;
+ }
+.appProductList .table tr {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f3f3f3 50%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f3f3f3), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  width:100%;
+  height:30px;
+ }
+.appProductList .table tr.alt {
+  background: #ffffff;
+  width:100%;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+.appProductList {
+  float:right;
+  margin-right:5%;
+  width: 70%;
+  position:relative;
+ }
+.appProductList .products .list li .title {
+  font: 16px/12px'OpenSans-Italic', sans-serif;
+  width: 90%;
+  float: left;
+  margin-left: 20%;
+  margin-bottom: 2%;
+  margin-top: 5px;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background: transparent;
+ }
+.appProductList .products ul li .title:hover {
+  font-weight: bold;
+}
+
+.appProductList .products .list li .wrapimg {
+  cursor: pointer;
+  float: left;
+  margin: 0 13px 0 0;
+  width: 19%;
+  position: relative;  
+  border: 1.5px solid gray;
+  height:130px;
+  margin-top:7px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+.appProductList .products .list li .wrapimg:hover {
+  height:132px;
+  margin-top:5px;
+}
+.appProductList .products .list li .wrapimg img {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+ }
+.appProductList .products .list li .wrapimgService {
+  cursor: pointer;
+  float: left;
+  margin: 0 13px 0 0;
+  width: 19%;
+  position: relative;  
+  border: 1.5px solid gray;
+  height:130px;
+  margin-top:7px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.appProductList .products .list li .wrapimgService img {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+ }
+.appProductList .table {
+  margin-top: 50px;
+  position: absolute;
+  float: bottom;	
+  width: 80%;
+  float: right;
+  right: 0%;
+ }
+.appProductList .table .name { 
+  text-align:left;
+  vertical-align:top;
+  width:10%;
+  font: 12px/10px'OpenSans-Italic', sans-serif;
+ }   
+.appProductList .prize {
+  float: right;
+  right: 0%;
+  bottom: 5%;
+  position: absolute;
+  font-weight: bold;
+  color: #a20000;
+ }
+
+.appProductList .webPage {
+  float: right;
+  right: 0%;
+  bottom: 5%;
+  position: absolute;
+  font-weight: bold;
+  color: #000080;
+  width:50%;
+  text-align:right;
+ }
+
+.appProductList .products ul li {
+  float: left;
+  width: 100%;
+  height: 144px;
+  position: relative;
+  border-bottom: 1px solid black;
+ }
+.appProductList .table th, td {
+  margin: 0;
+  text-align: center;
+  border-top:    1px solid #b5b5b5; 
+  border-bottom: 1px solid #dcdcdc; 
+  width:100%;
+ }
+.appProductList .table tr {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f3f3f3 50%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f3f3f3), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  width:100%;
+  height:30px;
+ }
+.appProductList .table tr.alt {
+  background: #ffffff;
+  width:100%;
+  height:30px;
+ }
+.appProductList .descriptionBox{
+  margin-top: 35px;
+  width:35%;
+  background: #ffffff;
+  height: 95px;
+  float:left;
+  overflow: auto;
+  text-align:left;
+  resize: none;
+  font: 11px/11px'OpenSans-Italic', sans-serif;
+ }
+}
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+.appProductList .products {
+ margin-top:30%;
+ overflow: hidden;
+ background: #FFFFFF;
+}
+
+.appProductList .products .list li {
+ float: none;
+ display: block;
+}
+
+.appProductList .products.catalog {
+ margin: 80px auto 40px auto;
+}
+
+.appProductList .products.category {
+ margin: 10px 0;
+ width: 100%;
+ float: left;
+}
+.appProductList .products ul li img {
+ position: absolute;
+ margin: auto;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ max-height:144px;
+}
+
+.appProductList .title {
+ padding: 5px;
+ position: absolute;
+ width: 100%;
+ height: 20%;
+ border: 1px solid rgba(51, 51, 51, 0);
+ -webkit-transition: opacity 1s;
+ -moz-transition: opacity 1s;
+ -o-transition: opacity 1s;
+  background: rgba(255, 255, 255, 0.5);
+}
+ .appProductList .title p, .title span, .title a {
+ text-transform: uppercase;
+}
+
+.appProductList .title a {
+ color: #003f75;
+ text-decoration: none;
+ display: block;
+}
+.appProductList .title span {
+    color: #a20000;
+	float: left;
+} 
+.appProductList .view p  { top: 5px; margin: 0 10px 0 0; } 
+.appProductList .view p,
+.appProductList .view a { 
+ float: left; 
+ display: inline-block;
+ text-decoration: none;
+ position: relative;
+};
+
+.appProductList .phone {
+ float: left;
+ left: 22%;
+ position: absolute;
+ font-weight: bold;
+ color: #8B0000;
+ bottom: 6%;
+}
+
+}
+
+.appProductList .btnRemove:hover, .appProductList .btnEdit:hover {
+ cursor: pointer; 
+ cursor: hand;
+}
+

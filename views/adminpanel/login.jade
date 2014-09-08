@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title    
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-login.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+
+body
+
+ block content
+  .appLogin  
+    .centro
+      .centroposition
+        .centroh1
+          form(role='form', action="/cmclogin/",method="post", style='max-width: 300px;',enctype='multipart/form-data')
+            center
+              h1 LOG IN
+              center
+                .centroh1
+                  .form-group
+                    input.form-control(type='text', name="username", placeholder='Enter Username',style='height: 30px;')
+                  .form-group
+                    input.form-control(type='password', name="password", placeholder='Password',style='height: 30px;')
+                  button.btn.btn-primary(type='submit') Submit
+                  &nbsp;
+                  a(href='/')
+                    button.btn(type="button") Cancel
+    

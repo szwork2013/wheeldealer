@@ -1,0 +1,77 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+ .appProductPage  .sectionHeader{
+  position:relative;
+  background:-webkit-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-moz-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-ms-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-o-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:linear-gradient(top,#a7d1f7,#79aae9);
+  width:96%;
+  text-align:left;
+  font: 20px/20px'OpenSans-Italic', sans-serif;
+  padding: 12px;
+  float:right;
+  margin-right:2%;
+ }
+ .appProductPage  .sectionTextHeader{
+  text-align:left
+  position:relative;
+  width:96%;
+  text-align:left;
+  margin-left: 2%;
+  margin-top: 30px;
+  font: 18px/18px'OpenSans-Italic', sans-serif;
+  padding: 10px;
+  font-weight:bold;
+ }
+ .appProductPage  .sectionText{
+  position:relative;
+  width:100%;
+  margin-left: 6%;
+  margin-right: 6%;
+  text-align:left;
+  font: 16px/16px'OpenSans-Italic', sans-serif;
+  padding: 10px;
+  white-space: pre-wrap;
+ }
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+ .appProductPage  .sectionHeader{
+  position:relative;
+  background:-webkit-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-moz-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-ms-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-o-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:linear-gradient(top,#a7d1f7,#79aae9);
+  width:100%;
+  text-align:left;
+  font: 18px/14px'OpenSans-Italic', sans-serif;
+  padding: 12px;
+ }
+ .appProductPage  .sectionTextHeader{
+  text-align:left
+  position:relative;
+  width:100%;
+  text-align:left;
+  margin-left: 2%;
+  margin-top: 20px;
+  font: 14px/15px'OpenSans-Italic', sans-serif;
+  padding: 10px;
+  font-weight:bold;
+ }
+ .appProductPage  .sectionText{
+  position:relative;
+  width:100%;
+  text-align:left;
+  margin-left: 6%;
+  font: 12px/20px'OpenSans-Italic', sans-serif;
+  padding: 10px;
+  white-space: pre-wrap;
+ }
+}

@@ -1,0 +1,32 @@
+block append
+     div.appProductList(id='appProductList')
+      div.products.category
+        ul.list(id='product-list')
+          each produictItem, i in productsVar 
+           li   
+             div.title
+               a(href='/product-item-service/#{langVar}/#{produictItem._id}?menu=#{menuViewVar}') #{produictItem.descriptionInfo.des_Title}
+             div.wrapimg#img_box
+               if (produictItem.imagesAray.length == 0)
+                 img(src='/images/no_picture.jpg') 
+               else
+                 img.imgBox(src='#{produictItem.imagesAray[0]}')
+             div
+                textarea.descriptionBox.appBarBlue() #{produictItem.descriptionInfo.des_InfoShort}
+                table.table(cellspacing='0',style='width:40%;float:left;')
+                  tr.alt
+                   td.name #{produictItem.categoryInfo.cat_Level1}
+                   td.name #{produictItem.contactInfo.con_City}
+                  tr.alt
+                   td.name #{produictItem.contactInfo.con_Phone1}
+                     span(style='float:left;')
+                      i.icon-phone.icon-1x
+                   td.name
+                      a(href='#{produictItem.descriptionInfo.des_WebPage}') #{produictItem.descriptionInfo.des_WebPage}
+              
+script.
+ $(document).ready(function() {   
+
+ });
+
+      

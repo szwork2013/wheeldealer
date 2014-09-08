@@ -1,0 +1,21 @@
+block append
+   div.appFooterMail
+      form(id='contactModalForm' role='form', action='/index-contact/#{langVar}',method='post', onsubmit='',enctype='multipart/form-data') 
+       button.btn.btn-default.elementButton(type='submit')
+         span
+          img(src='/icons/mail.png',style='max-width:36px;')
+       .form-group.form-inline.elementLine
+         label.control-label.elementLabel(for='email_From') #{appMenuLangVar[0].nav_contact_emailFrom}:
+          if (!user)
+            input#email_From.elementValue(type='text', name='email_From',maxlength ='25',value='',style='height:100%;')
+           else 
+            input#email_From.elementValue(type='text', name='email_From',maxlength ='25',value='#{user.contactInfo.con_Email}',style='height:100%;') 
+       .form-group.form-inline.elementLine
+          label.control-label.elementLabel(for='email_Subject') #{appMenuLangVar[0].nav_contact_emailSubject}:
+           input#email_Subject.elementValue(type='text', name='email_Subject',maxlength ='25',style='height:100%;')
+       .form-group.form-inline.elementLine
+          label.control-label.elementLabel(for='email_Data',style='height:300px;') #{appMenuLangVar[0].nav_contact_emailText}:
+           textarea#email_Data.elementText(rows='10', cols='190', maxlength='1020', name='email_Data',style='height:100%;')
+       .form-group.form-inline.elementLine.hide
+           input#email_To.elementValue.hide(type='text', name='email_To',maxlength ='25',value='#{userToVar}',style='height:100%;') 
+

@@ -1,0 +1,63 @@
+block append
+      div.appUserPanelMenu(id='appUserPanelMenu')
+       ul
+        li
+          a.appBtnBackgroundGray(href='#')
+           span 
+            i.icon-plus-sign-alt.icon-2x  
+           | 
+           &nbspAdd advertisement
+          ul
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add-car/#{langVar}/0/0/0/0/0') Car
+        li
+         a.appBtnBackgroundGray(href='#') 
+          span 
+           i.icon-list-ul.icon-2x
+          | 
+          &nbspMy advertisements
+         ul
+            li
+              a(href='/userpanel-product-list-car/#{langVar}') Car
+        li
+          a.appBtnBackgroundGray(href='#') 
+           span 
+            i.icon-envelope.icon-2x
+           |            
+           &nbspContact Info
+        li
+          a.appBtnBackgroundGray(href='#') 
+           span 
+            i.icon-cog.icon-2x
+           | 
+           &nbspAdd menu element
+          ul
+            li
+              a(href='/adminpanel-menu-add-car/0/0/0/0') Car
+script.
+ $(document).ready(function(){
+   $('#appUserPanelMenu ul ul li:odd').addClass('odd');
+   $('#appUserPanelMenu ul ul li:even').addClass('even');
+   $('#appUserPanelMenu > ul > li > a').click(function() {
+
+    var checkElement = $(this).next();
+
+      $('#appUserPanelMenu li').removeClass('active');
+      $(this).closest('li').addClass('active'); 
+
+      if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+        $(this).closest('li').removeClass('active');
+        checkElement.slideUp('normal');
+      }
+      if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+        $('#appUserPanelMenu ul ul:visible').slideUp('normal');
+        checkElement.slideDown('normal');
+      }
+
+      if($(this).closest('li').find('ul').children().length == 0) {
+       return true;
+      } else {
+      return false; 
+     }
+    });
+ });

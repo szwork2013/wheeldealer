@@ -1,0 +1,18 @@
+block append
+    .container
+        #removeProductModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true')
+         .modal-dialog
+           .modal-content
+             .modal-header
+               button.close.btnModalCancel(type='button', data-dismiss='modal', aria-hidden='true') ×
+               h4#myModalLabel.modal-title #{appMenuLangVar[0].nav_modal_remove_title}
+             .modal-body
+                .p #{appMenuLangVar[0].nav_modal_remove_subtitle}
+             .modal-footer
+                form(id='removeProdForm' role='form', action='/userpanel-product-remove/#{langVar}/#{categoryVar}',method='post', style='max-width: 100%',  onsubmit='',enctype='multipart/form-data') 
+                  input#removeId.form-control.hidden(type='text', name='_id',  value='' )
+                  button.btn.btn-default(type='submit') #{appMenuLangVar[0].nav_modal_button_yes}                
+                  button.btn.btn-primary.btnModalCancel(type="button", data-dismiss='modal') #{appMenuLangVar[0].nav_modal_button_no}
+
+
+

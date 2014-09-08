@@ -1,0 +1,112 @@
+block append
+  .appNavSearch.hide(id='appNavSearch')
+   a.elementHideButton(href='/index-car/#{langVar}/#{traPerPageVar}/#{sortVar}/0/0/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}?menu=#{menuViewVar}')
+   a.elementCloseButton(href='/index-car/#{langVar}/#{traPerPageVar}/#{sortVar}/0/0/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/0/0/0/0/0/0/0/0/0/0/0/0/0/0?menu=#{menuViewVar}')
+   form(id='searchForm' role='form', action="/search/#{langVar}?menu=#{menuViewVar}",method="post", style='max-width: 100%', onsubmit='genQuery()',enctype='multipart/form-data')
+    .form-group.form-inline
+        .btn-group(style='maring-right:20px;')
+           if (transmitionVar == 0)
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown')
+             | #{appMenuLangVar[0].nav_search_transmition}
+             span.caret
+           else
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].dropdown_car_transmition[transmitionVar]}
+             span.caret
+           ul#det_Transmition.dropdown-menu
+                 each transmitionItem, i in appMenuLangVar[0].dropdown_car_transmition
+                  li
+                   a.typeItem(data-index=i) #{transmitionItem}             
+        .btn-group(style='margin-left:20px;maring-right:20px;')
+           if (fuelVar == 0)
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].nav_search_fuel}
+             span.caret
+           else
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].dropdown_car_fuel[fuelVar]}
+             span.caret
+           ul#det_Fuel.dropdown-menu
+                 each fuelItem, i in appMenuLangVar[0].dropdown_car_fuel
+                  li
+                   a.typeItem(data-index=i) #{fuelItem}             
+        .btn-group(style='margin-left:20px;maring-right:20px;')
+           if (bodyVar == 0)
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].nav_search_body}
+             span.caret
+           else
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].dropdown_car_body[bodyVar]}
+             span.caret
+           ul#det_Body.dropdown-menu
+                 each bodyItem, i in appMenuLangVar[0].dropdown_car_body
+                  li
+                   a.typeItem(data-index=i) #{bodyItem}             
+        .btn-group(style='margin-left:20px;maring-right:30px;')
+           if (colorVar == 0)
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].nav_search_color}
+             span.caret
+           else
+            a.btn.dropdown-toggle.elementSearchDropValue(data-toggle='dropdown') 
+             | #{appMenuLangVar[0].dropdown_color[colorVar]}
+             span.caret
+           ul#det_Color.dropdown-menu
+                 each colorItem, i in appMenuLangVar[0].dropdown_color
+                  li
+                   a.typeItem(data-index=i) #{colorItem}     
+    .form-group.form-inline
+         label.control-label.elementSearchLabelEdit(for='det_MinYear') #{appMenuLangVar[0].nav_search_minYear}:
+          input#det_MinYear.elementSearchValueEdit(type='text',    name='det_MinYear',    value='#{minYearVar}', placeholder='',  pattern='[0-9]*')
+         label.control-label.elementSearchLabelEdit(for='det_MaxYear') #{appMenuLangVar[0].nav_search_maxYear}:
+          input.elementSearchValueEdit(type='text',    name='det_MaxYear',    value='#{maxYearVar}',    placeholder='',  pattern='[0-9]*')
+         label.control-label.elementSearchLabelEdit(for='det_MinEngine') #{appMenuLangVar[0].nav_search_minEngine}:
+          input.elementSearchValueEdit(type='text',  name='det_MinEngine',  value='#{minEngineVar}',  placeholder='',  pattern='[0-9]*')
+         label.control-label.elementSearchLabelEdit(for='det_MaxEngine') #{appMenuLangVar[0].nav_search_maxEngine}:
+          input.elementSearchValueEdit(type='text',  name='det_MaxEngine',  value='#{maxEngineVar}'   placeholder='',  pattern='[0-9]*')
+    .form-group.form-inline
+         label.control-label.elementSearchLabelEdit(for='det_MinMileage') #{appMenuLangVar[0].nav_search_minMileage}: 
+          input.elementSearchValueEdit(type='text', name='det_MinMileage', value='#{minMileageVar}', placeholder='',  pattern='[0-9]*')
+         label.control-label.elementSearchLabelEdit(for='det_MaxMileage') #{appMenuLangVar[0].nav_search_maxMileage}:
+          input.elementSearchValueEdit(type='text', name='det_MaxMileage', value='#{maxMileageVar}', placeholder='',  pattern='[0-9]*')
+         label.control-label.elementSearchLabelEdit(for='det_City') #{appMenuLangVar[0].nav_search_city}:
+          input.elementSearchValueEdit(type='text',       name='con_City',       value='#{cityVar}', placeholder='')
+         label.control-label.elementSearchLabelEdit(for='det_Country') #{appMenuLangVar[0].nav_search_country}:
+          input.elementSearchValueEdit(type='text',    name='con_Country',    value='#{countryVar}', placeholder='')
+    .form-group.form-inline
+         label.control-label.elementSearchLabelEdit(for='det_Country') #{appMenuLangVar[0].nav_search_minPrize}:
+          input.elementSearchValueEdit(type='text',   name='det_MinPrize',   value='#{minPrizeVar}',   placeholder='',pattern='[0-9]+(\\.[0-9][0-9]?)?')
+         label.control-label.elementSearchLabelEdit(for='det_Country') #{appMenuLangVar[0].nav_search_maxPrize}:
+          input.elementSearchValueEdit(type='text',   name='det_MaxPrize',   value='#{maxPrizeVar}',   placeholder='',pattern='[0-9]+(\\.[0-9][0-9]?)?')
+     button.btn.btn-primary.elementSearchButton.appBtnBackgroundGray(type='submit') Search
+     .form-group.form-inline
+        input.form-control.hide(type='text', name='cat_Level1', value='#{catLevel1Var}' )
+        input.form-control.hide(type='text', name='cat_Level2', value='#{catLevel2Var}' ) 
+        input.form-control.hide(type='text', name='cat_Level3', value='#{catLevel3Var}' ) 
+        input.form-control.hide(type='text', name='det_Body', value='#{bodyVar}' )
+        input.form-control.hide(type='text', name='det_Transmition', value='#{transmitionVar}' ) 
+        input.form-control.hide(type='text', name='det_Color', value='#{colorVar}' ) 
+        input.form-control.hide(type='text', name='det_Fuel', value='#{fuelVar}' ) 
+
+script.
+ $(document).ready(function() {   
+   
+   $('#searchForm input').each(function() {
+      if($(this).val() == 0) {
+        $(this).val('');
+      } else 
+      {
+        $(this).addClass('selected'); 
+      }       
+   });
+
+   $(document).on('click', '.typeItem', function () {
+      
+      var selector = 'input[name=' + $(this).parent().parent().attr('id') + ']';
+      $(selector).val($(this).data('index'));
+
+      $(this).parents(".btn-group").find('.btn').html($(this).text());
+   });
+ });
+

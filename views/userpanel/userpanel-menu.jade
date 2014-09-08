@@ -1,0 +1,85 @@
+block append
+      div.appUserPanelMenu(id='appUserPanelMenu')
+       ul
+        li
+          a.appBtnBackgroundGray(href='#') #{appMenuLangVar[0].userpanel_menu_1}
+           span 
+            i.icon-plus-sign-alt.icon-2x            
+          ul
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add/#{langVar}/car/0/0/0/0/0?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_1}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add/#{langVar}/partcar/0/0/0/0/0?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_2}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add/#{langVar}/motor/0/0/0/0/0?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_3}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add/#{langVar}/partmotor/0/0/0/0/0?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_4}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add/#{langVar}/dealer/0/0/0/0/0?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_5}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-add/#{langVar}/service/0/0/0/0/0?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_6}
+        li
+         a.appBtnBackgroundGray(href='#') #{appMenuLangVar[0].userpanel_menu_2}
+          span 
+           i.icon-list-ul.icon-2x
+         ul
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-my/#{langVar}/car?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_1}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-my/#{langVar}/partcar?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_2}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-my/#{langVar}/motor?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_3}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-my/#{langVar}/partmotor?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_4}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-my/#{langVar}/dealer?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_5}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-my/#{langVar}/service?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_6}
+        li
+         a.appBtnBackgroundGray(href='#') #{appMenuLangVar[0].userpanel_menu_3}
+          span 
+           i.icon-eye-open.icon-2x
+         ul
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-fav/#{langVar}/car?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_1}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-fav/#{langVar}/partcar?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_2}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-fav/#{langVar}/motor?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_3}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-fav/#{langVar}/partmotor?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_4}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-fav/#{langVar}/dealer?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_5}
+            li
+              a.appBtnBackgroundGray(href='/userpanel-product-list-fav/#{langVar}/service?menu=#{menuViewVar}') &nbsp&nbsp&nbsp#{appMenuLangVar[0].nav_menu_top_6}        
+        li
+          a.appBtnBackgroundGray(href='/userpanel-contactinfo-view/#{langVar}?menu=#{menuViewVar}') #{appMenuLangVar[0].userpanel_menu_4}
+           span 
+            i.icon-envelope.icon-2x
+script.
+ $(document).ready(function(){
+   $('#appUserPanelMenu ul ul li:odd').addClass('odd');
+   $('#appUserPanelMenu ul ul li:even').addClass('even');
+   $('#appUserPanelMenu > ul > li > a').click(function() {
+
+    var checkElement = $(this).next();
+
+      $('#appUserPanelMenu li').removeClass('active');
+      $(this).closest('li').addClass('active'); 
+
+      if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+        $(this).closest('li').removeClass('active');
+        checkElement.slideUp('normal');
+      }
+      if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+        $('#appUserPanelMenu ul ul:visible').slideUp('normal');
+        checkElement.slideDown('normal');
+      }
+
+      if($(this).closest('li').find('ul').children().length == 0) {
+       return true;
+      } else {
+      return false; 
+     }
+    });
+ });

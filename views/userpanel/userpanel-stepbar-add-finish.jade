@@ -1,0 +1,16 @@
+block append
+ div.appBarBlue.appMenuStepBar.flat(id='appUserMenuStepbar')
+   button.stepBtn.appBtnBackgroundGray(onClick='history.go(-1);return true;', style='float:left;') #{appMenuLangVar[0].userpanel_stepbar_back}
+   a.stepBtn.appBtnBackgroundGray(href='/userpanel-product-add-confirm/#{langVar}/#{categoryVar}/#{productsVar[0]._id}?menu=#{menuViewVar}') #{appMenuLangVar[0].userpanel_stepbar_finish}
+   form.hide(action='https://www.paypal.com/cgi-bin/webscr', method='post')
+     input(type='hidden', name='cmd', value='_xclick')
+     input(type='hidden', name='business', value='L8NTC8C6ERPBL')
+     input(type='hidden', name='item_name', value='Advertisement - #{categoryVar}')
+     input(type='hidden', name='item_number', value='#{productsVar[0]._id}')
+     input(type='hidden', name='amount', value='1')
+     input(type='hidden', name='quantity', value='1')
+     input(type='hidden', name='no_note', value='1')
+     input(type='hidden', name='currency_code', value='CAD')
+     input(type='hidden', name='notify_url', value='http://localhost:3000/userpanel-paypal-reps/#{langVar}')
+     input(type='image', src='/images/btn_payNow_#{langVar}.jpg', border='0', name='submit',style='float:right;')
+

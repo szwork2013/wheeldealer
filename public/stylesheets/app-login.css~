@@ -1,0 +1,126 @@
+@media screen and (max-device-width: 480px) {
+  .appLogin {
+   width : 85%;
+   float:left;
+   margin-top:3%;
+   margin-left:5%;
+ }
+}
+
+
+@media screen and (min-device-width: 481px){
+  .appLogin {
+   width: 40%;
+   float:left;
+   margin-top:3%;
+   margin-left: 30%;
+ }
+}
+
+/***************************************************************************/
+ .appLogin .fontSizeHeader {
+     font-size: 28px;
+ }
+.appLogin .loginBtn{
+ margin-top: 10px;
+ line-height: 30px;
+ width: 30%;
+ float: left;
+ left:12.5%;
+ margin-left: 5%;
+ position: relative;
+ text-decoration: none;
+ display: block;
+}
+.appLogin .login-input {
+ box-shadow: 0px -1px 3px rgba(0,0,0,0.1), 0px 2px 4px rgba(0,0,0,0.5);
+ display: block;
+ width: 60%;
+ height: 40px;
+ margin-bottom: 20px;
+ padding: 0 9px;
+ color: #3d3d3d;
+ background: #FFF;
+ border-top-color: rgba(0,0,0,0.5);
+ border-radius: 4px;
+}
+.appLogin .login-input:focus {
+ outline: 0;
+}
+.appLogin .login-help {
+ width: 100%;
+ margin-top: 4%;
+ text-align: center;
+}
+
+.appLogin .header{
+  margin-top: 5%;
+  margin-left: 5%;
+  color: #79aae9;
+  font-family: "Lato";
+  text-decoration: none;
+  text-shadow: rgba(0,0,0,0.3) 0 1px 1px;
+ }
+
+
+.appLogin .centro {
+ position: relative;
+ width: 100%;
+ background: #00000; /* Old browsers */
+ background: -moz-linear-gradient(top,  #ffffff 0%, #f3f3f3 50%, #ffffff 100%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f3f3f3), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* IE10+ */
+ background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ffffff 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+ box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.35);
+ border: 1.5px solid #7ea4cf; 
+ border-radius: 6px;
+ overflow: hidden;
+ z-index: 100;
+ 
+}
+
+.appLogin .centroh1 {
+ margin-top: 5%;
+ margin-bottom: 5%;
+ width: 100%;
+ background: #FFF;
+}
+
+
+.appLogin .login-error {
+ width: 80%;
+ margin-top: 2%;
+ text-align: center;
+ padding-top: 10px;
+ color: red;
+ position: relative;
+ font: 14px/12px'OpenSans-Italic', sans-serif;
+}
+
+.appLogin .login-info {
+ width: 80%;
+ margin-top: 5%;
+ text-align: center;
+ color: green;
+ position: relative;
+ font: 14px/12px'OpenSans-Italic', sans-serif;
+}
+
+.appLogin .login-help {
+ width:100%;
+ margin-top:30%;
+}
+.appLogin .login-help > a {
+ font: 14px/12px'OpenSans-Italic', sans-serif;
+ color: #79aae9;
+ text-decoration: none;
+ text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+}
+
+.appLogin .login-help > a:hover {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,25 @@
+block append
+  div.mobileDisplay(id='appNavbar',style='width:100%;')
+   .btn-group(style='width:100%;')
+      button.appBtnBackgroundGray.dropdown-toggle.fullwidthMobile(type='button', data-toggle='dropdown', style='font: normal bold 16px/16px Arial, sans-serif') MENU
+      ul.dropdown-menu
+         li
+           if (searchVar == 1) 
+            a#searchBtn.searchBtnOn.bigFontMobile(href='/index-motor/#{langVar}/0/0/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}') #{appMenuLangVar[0].nav_navbar_top_search}&nbsp&nbsp
+             i.icon-arrow-up
+           else
+            a#searchBtn.searchBtnOn.bigFontMobile(href='/index-motor/#{langVar}/1/0/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/#{bodyVar}/#{transmitionVar}/#{colorVar}/#{fuelVar}/#{minYearVar}/#{maxYearVar}/#{minEngineVar}/#{maxEngineVar}/#{minMileageVar}/#{maxMileageVar}/#{minPrizeVar}/#{maxPrizeVar}/#{cityVar}/#{countryVar}') #{appMenuLangVar[0].nav_navbar_top_search}&nbsp&nbsp
+         if (!user)         
+          li
+           a.bigFontMobile(href='/login/#{langVar}') #{appMenuLangVar[0].nav_navbar_top_login}&nbsp/&nbsp#{appMenuLangVar[0].nav_navbar_top_signin}&nbsp
+         else
+          li
+           a.bigFontMobile(href='/userpanel/#{langVar}?menu=on') #{appMenuLangVar[0].nav_navbar_top_mypanel}&nbsp&nbsp
+          li
+           a.bigFontMobile(href='/logout/#{langVar}') #{appMenuLangVar[0].nav_navbar_top_logout}&nbsp&nbsp
+         li
+           a.bigFontMobile(href='') #{appMenuLangVar[0].nav_navbar_top_contact}&nbsp&nbsp
+         li
+           a.bigFontMobile(href='/en_US/') EN
+         li
+           a.bigFontMobile(href='/pl_PL/') PL

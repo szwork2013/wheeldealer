@@ -1,0 +1,27 @@
+block append
+  .appLogin  
+   .centro
+      .centroposition
+        .centroh1
+          form(role='form', action="/login/#{langVar}/",method="post", style='max-width: 100%;',enctype='multipart/form-data')
+            center
+              h1.fontSizeHeader.header #{appMenuLangVar[0].login_login_title}
+              .center
+                .centroh1
+                  .form-group
+                    input.form-control.login-input(type='text', name="username", placeholder='#{appMenuLangVar[0].login_placeholder_email}')
+                  .form-group
+                    input.form-control.login-input(type='password', name="password", placeholder='#{appMenuLangVar[0].login_placeholder_password}')            
+                  a(href='/#{langVar}/')
+                   button.btn.loginBtn.appBtnBackgroundGray(type="button") #{appMenuLangVar[0].login_button_cancel}
+                  button.btn.loginBtn.appBtnBackgroundGray(type='submit') #{appMenuLangVar[0].login_button_submit}
+                  .login-help
+                   p
+                    a(href='/password-send/#{langVar}/') #{appMenuLangVar[0].login_login_password_send}
+                   p
+                    a(href='/password-change/#{langVar}/') #{appMenuLangVar[0].login_login_password_change}
+                   p
+                    a(href='/register/#{langVar}/') #{appMenuLangVar[0].login_login_signup}             
+                   p.login-info  #{infoVar}
+                   p.login-error #{errorVar}
+

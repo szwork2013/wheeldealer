@@ -1,0 +1,32 @@
+block append
+          div.msg_slideshow.divSizeBox(id='msg_slideshow')
+           div(id='msg_slideshow_big')           
+            if (productsVar[0].imagesAray.length == 0)
+             a
+              img(src='/images/no_picture.jpg') 
+            else
+             a(href='#{productsVar[0].imagesAray[0]}')
+               img(src='#{productsVar[0].imagesAray[0]}')            
+           div.ico_slideshow_small
+               ul.wrapping(id='picturesUl')
+                 each imageItem, i in productsVar[0].imagesAray
+                  li.box(id='iImage#{i}BoxImg')
+                   img(src='#{imageItem}')
+script.
+ $(document).ready(function() {
+
+  $('#msg_slideshow').width($(window).width() * 0.3);
+  //$('#msg_slideshow').height($(window).height() * 0.65);
+
+  $('#iImage0BoxImg').addClass('boxSelected');
+   $(document).on('click', '.box', function () {
+     $('#picturesUl').find('li').each(function(){
+        $(this).removeClass('boxSelected');
+     });
+     $(this).addClass('boxSelected');
+     $(this).find('img').each(function(){
+           $('#msg_slideshow_big').empty();
+           $('#msg_slideshow_big').html('<a href="' + $(this).attr('src') +'" > <img src="'+$(this).attr('src') +'" /> </a>');     
+         });
+   });
+ });

@@ -1,0 +1,70 @@
+@media screen and (max-device-width: 480px) {
+.elementButton {
+ margin-top:20px;
+ margin-left:7%; 
+ float:left;
+}
+.elementLine {
+  margin-top:15px;
+  float:left;
+  height:40px;
+  width: 100%;
+  margin-left:5px;
+ }
+
+ .elementLabel {
+  width:96%;
+  height:40px;
+  margin-left: 1%;
+  float:left;
+  vertical-align: top;
+ }
+
+ .elementValue {
+  width: 80%;
+  height:100%;
+  float: right;
+  text-align: left;
+ }
+
+ .elementText {
+  float: right;
+  width:80%;
+  resize: none;
+ }
+}
+
+@media screen and (min-device-width: 481px) {
+ .elementButton {
+  float:left;
+ }
+ .elementLine {
+  margin-top:15px;
+  float:left;
+  height:40px;
+  width 100%;
+  margin-left:5px;
+ }
+
+ .elementLabel {
+  width:460px;
+  height:40px;
+  margin-left: 5px;
+  float:left;
+  vertical-align: top;
+ }
+
+ .elementValue {
+  width: 380px;
+  height:100%;
+  float: right;
+  text-align: left;
+ }
+
+ .elementText {
+  float: right;
+  width:380px;
+  resize: none;
+ }
+}
+ 

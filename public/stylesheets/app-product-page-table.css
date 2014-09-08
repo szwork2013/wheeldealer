@@ -1,0 +1,84 @@
+/*********************************************************/
+/*                   MOBILE DEVICES                      */
+/*********************************************************/
+@media screen and (max-device-width: 480px) {
+.appProductPage .divSizeTable {
+  float: right;
+  margin-right:2%;
+  width: 96%;
+ }
+.appProductPage .table tr {
+  background:-webkit-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-moz-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-ms-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-o-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:linear-gradient(top,#a7d1f7,#79aae9);
+  width:100%;
+  font: normal normal 16px/16px Arial, sans-serif;
+  height:30px;  
+ }
+.appProductPage .table .name { 
+  text-align:left;
+  width:50%;
+ }   
+ .appProductPage .table .value{ 
+  text-align:right;
+  width:50%;
+ }  
+}
+/*********************************************************/
+/*                     DESKTOP SIZE                      */
+/*********************************************************/
+@media screen and (min-device-width: 481px) {
+.appProductPage .divSizeTable {
+  float: right;
+  margin-right:2%;
+  width: 38%;
+ }
+
+.appProductPage .divSizeTableServ {
+  float: right;
+  margin-right:2%;
+  width: 60%;
+ }
+ 
+.appProductPage .table tr {
+  background:-webkit-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-moz-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-ms-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:-o-linear-gradient(top,#a7d1f7,#79aae9); 
+  background:linear-gradient(top,#a7d1f7,#79aae9);
+  width:100%;  
+ }
+.appProductPage .table .name { 
+  text-align:left;
+  vertical-align:top;
+  width:25%;
+ }   
+.appProductPage .table .value{ 
+  text-align:right;
+  vertical-align:top;
+  width:25%;
+ }   
+ 
+}
+/*********************************************************/
+/*                       GENERAL                         */
+/*********************************************************/
+.appProductPage .table th, td {
+ margin: 0;
+ padding: 5px 10px;
+ text-align: center;
+ width:100%;
+}
+
+.appProductPage .table .prize{ 
+  color:red;
+}   
+
+
+.appProductPage .table tr.alt {
+  background: #ffffff;
+  width:100%;
+}
+

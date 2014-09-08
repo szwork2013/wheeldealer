@@ -1,0 +1,27 @@
+block append
+  div.navBarTop    
+    if(user)
+     a.appBtnBackgroundBlue.btn.navAddBtn(href='/userpanel-product-add/en_US/#{categoryVar}/#{appMenuLevelVar}/#{catLevel1Var}/#{catLevel2Var}/#{catLevel3Var}/0?menu=on') 
+      span 
+       i.icon-plus-sign.icon-2x  
+      | 
+      &nbsp#{appMenuLangVar[0].userpanel_menu_1}
+    else
+     a.appBtnBackgroundBlue.btn.navAddBtn(href='/login/#{langVar}') 
+      span 
+       i.icon-plus-sign.icon-2x  
+      | 
+      &nbsp#{appMenuLangVar[0].userpanel_menu_1}
+    div.navBoxHeader
+      img(src='/images/commercial/navbartop/01_commercial.jpg')
+    if(user)
+     a.appBtnBackgroundGray.btn.navPanelBtn(href='/userpanel/#{langVar}/?menu=on') 
+      span 
+       i.icon-home.icon-2x  
+      | 
+      &nbsp#{appMenuLangVar[0].nav_navbar_top_mypanel}
+     div.navLoginLine
+      a(style='float:left;margin-left:10px;color:black;') #{user.username}
+
+
+

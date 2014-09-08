@@ -1,0 +1,285 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='/stylesheets/vendor/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/vendor/jquery-ui.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/app-userpanel-nav-menu-list.css')
+    link(rel='stylesheet', href='/stylesheets/app-product-page-add.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-progressbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-stepbar.css')
+    link(rel='stylesheet', href='/stylesheets/app-login.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-contact.css')
+    link(rel='stylesheet', href='/stylesheets/app-nav-navbar.css')
+
+    script(src='/javascripts/vendor/jquery-1.9.1.js')
+    script(src='/javascripts/vendor/jquery-ui.js')
+    script(src='/javascripts/vendor/bootstrap.js')
+    script(src='/javascripts/vendor/bootstrap-dropdown.js')
+
+body
+ block content
+ if (!user)
+    include ../userlogin/login-login
+ else
+    include userpanel-nav-commercial-top
+    include ../nav-navbar-top
+    div#Menu.mobileDisplay(style='width:100%;float:left;')
+     if (menuViewVar == 'on')
+      a.abrir(id='abrir', href='?menu=off') &#8801
+      a.fechar.hide(id='fechar', href='?menu=on') &#8801    
+     else
+      a.abrir.hide(id='abrir', href='?menu=off') &#8801
+      a.fechar(id='fechar', href='?menu=on') &#8801
+    .row
+     if(menuViewVar == 'on') 
+      include userpanel-menu
+     include userpanel-progressbar
+     div(id='appContent')
+      form(id='productForm' role='form', action="/userpanel-product-add-submit-part/#{langVar}/partcar?menu=#{menuViewVar}",method="post", style='max-width: 100%', onsubmit='return validateForm();',enctype='multipart/form-data')
+        .appProductAdd
+         .title #{appMenuLangVar[0].product_add_part_section_1_title}:
+          .form-group.form-inline
+            label.control-label.elementLabelDrop(for='cat_Level1') #{appMenuLangVar[0].product_item_part_catLevel1}:
+             .btn-group(style='float: right;')
+               a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                | #{catLevel1LabelVar}
+                span.caret
+               ul#cat_Level1.dropdown-menu
+                each catLevel1Item, i in catLevel1Var 
+                 li
+                  a.typeItem(href='/userpanel-product-add/#{langVar}/partcar/1/#{catLevel1Item.cat_Level1}/0/0/0?menu=#{menuViewVar}') #{catLevel1Item.cat_Level1}
+            if (menuLevelVar > 0)
+             if (catLevel2Var.length > 0)
+              label.control-label.elementLabelDrop(for='cat_Level2') #{appMenuLangVar[0].product_item_part_catLevel2}:
+               .btn-group(style='float: right;')
+                 a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                  | #{catLevel2LabelVar}
+                  span.caret
+                 ul#cat_Level2.dropdown-menu
+                  if parseInt(menuLevelVar) > 0
+                   each catLevel2Item, i in catLevel2Var 
+                    li
+                      a.typeItem(href='/userpanel-product-add/#{langVar}/partcar/2/#{catLevel2Item.cat_Level1}/#{catLevel2Item.cat_Level2}/0/0?menu=#{menuViewVar}') #{catLevel2Item.cat_Level2}
+         .form-group.form-inline
+          input.form-control.hide(type='text', name='cat_Level1',      value='#{catLevel1LabelVar}' )
+          if (menuLevelVar > 1)
+           input.form-control.hide(type='text', name='cat_Level2',     value='#{catLevel2LabelVar}' )
+          input.form-control.hide(type='text', name='det_Condition',        value='' )
+         .header #{appMenuLangVar[0].product_add_advTitle}:
+          .form-group.form-inline(style='margin-top:20px;')
+             input#des_Title.elementValueTitle(type='text', name='des_Title',maxlength ='25') 
+         .header #{appMenuLangVar[0].product_add_section_2_title}:
+          .form-group.form-inline(style='margin-top:20px;')
+            label.control-label.elementLabelDrop(for='det_Condition') #{appMenuLangVar[0].product_item_condition}:
+              .btn-group(style='float: right;')
+                a.btn.dropdown-toggle.elementValueDrop(data-toggle='dropdown')
+                 span.caret
+                ul#det_Condition.dropdown-menu
+                 each conditionItem, i in appMenuLangVar[0].dropdown_part_condition
+                  li
+                    a.typeItem(data-index=i) #{conditionItem}                          
+           .form-group.form-inline
+             label.control-label.elementLabelEdit(for='det_Band') #{appMenuLangVar[0].product_item_vehicle_catLevel1}:
+              input#det_Band.elementValueEdit(type='text', name='det_Band',value='',style='text-align:left;',maxlength ='19')
+             label.control-label.elementLabelEdit(for='det_Model') #{appMenuLangVar[0].product_item_vehicle_catLevel2}:
+              input#det_Model.elementValueEdit(type='text', name='det_Model',value='',style='text-align:left;',maxlength ='19')
+             label.control-label.elementLabelEdit(for='det_Version') #{appMenuLangVar[0].product_item_vehicle_catLevel3}:
+              input#det_Version.elementValueEdit(type='text', name='det_Version',value='',style='text-align:left;',maxlength ='19')
+           .form-group.form-inline
+             label.control-label.elementLabelEdit(for='det_Year') #{appMenuLangVar[0].product_item_year}:
+              input#det_Year.elementValueEdit(type='number', name='det_Year',value='1900',pattern='[0-9]*',maxlength ='4')
+             label.control-label.elementLabelEdit(for='det_Prize') #{appMenuLangVar[0].product_item_prize}:
+              input#det_Prize.elementValueEdit(type='text', name='det_Prize',value='0.00',pattern='[0-9]+(\\.[0-9][0-9]?)?',maxlength ='19')
+         .header #{appMenuLangVar[0].product_add_section_4_title}: 
+         textarea.desctiption(rows='10', cols='90', maxlength='1020', name='des_Info')
+         .header #{appMenuLangVar[0].product_add_section_5_title}:
+         .pictures(id='pictures')
+          .div
+             ul.wrapping(id='picturesUl')
+              li.box(id='iImage1img')
+                  img(src='/images/no_picture.jpg')                   
+                  input.form-control(type='text', name='iImage1ind', value='none',style='display: none' )              
+              li.box(id='iImage2img')
+                  img(src='/images/no_picture.jpg')
+                  input.form-control(type='text', name='iImage2ind', value='none',style='display: none' )
+              li.box(id='iImage3img')
+                  img(src='/images/no_picture.jpg')
+                  input.form-control(type='text', name='iImage3ind', value='none',style='display: none' )
+              li.box(id='iImage4img')
+                  img(src='/images/no_picture.jpg')
+                  input.form-control(type='text', name='iImage4ind', value='none',style='display: none' )
+              li.box(id='iImage5img')
+                  img(src='/images/no_picture.jpg')
+                  input.form-control(type='text', name='iImage5ind', value='none',style='display: none' )                          
+          input#iImage1(type="file", name="iImage1",style='display: none')  
+          div.upload.appBtnBackgroundGray(onclick='selectFile("iImage1");') #{appMenuLangVar[0].product_add_section_file_upload}
+          input#iImage2(type="file", name="iImage2",style='display: none')  
+          div.upload.appBtnBackgroundGray(onclick='selectFile("iImage2");') #{appMenuLangVar[0].product_add_section_file_upload}    
+          input#iImage3(type="file", name="iImage3",style='display: none')  
+          div.upload.appBtnBackgroundGray(onclick='selectFile("iImage3");') #{appMenuLangVar[0].product_add_section_file_upload}    
+          input#iImage4(type="file", name="iImage4",style='display: none')  
+          div.upload.appBtnBackgroundGray(onclick='selectFile("iImage4");') #{appMenuLangVar[0].product_add_section_file_upload}    
+          input#iImage5(type="file", name="iImage5",style='display: none')  
+          div.upload.appBtnBackgroundGray(onclick='selectFile("iImage5");') #{appMenuLangVar[0].product_add_section_file_upload}    
+         .header #{appMenuLangVar[0].product_add_section_6_title}:
+          .form-group.form-inline
+             label.control-label.elementLabelEditContact(for='cName') #{appMenuLangVar[0].product_item_contact_name}
+              input#con_Name.elementValueEditContact(type='text', name='con_Name', value='#{user.contactInfo.con_Name}')
+             label.control-label.elementLabelEditContact(for='con_Email') #{appMenuLangVar[0].product_item_contact_email}
+              input#con_Email.elementValueEditContact(type='text', name='con_Email', value='#{user.contactInfo.con_Email}')
+             label.control-label.elementLabelEditContact(for='con_Street') #{appMenuLangVar[0].product_item_contact_street}
+              input#con_Street.elementValueEditContact(type='text', name='con_Street',value='#{user.contactInfo.con_Street}')
+             label.control-label.elementLabelEditContact(for='con_Zip') #{appMenuLangVar[0].product_item_contact_zip}
+              input#con_Zip.elementValueEditContact(type='text', name='con_Zip', value='#{user.contactInfo.con_Zip}')
+             label.control-label.elementLabelEditContact(for='con_City') #{appMenuLangVar[0].product_item_contact_city}
+              input#con_Zip.elementValueEditContact(type='text', name='con_City', value='#{user.contactInfo.con_City}')
+             label.control-label.elementLabelEditContact(for='con_Country') #{appMenuLangVar[0].product_item_contact_country}
+              input#con_Country.elementValueEditContact(type='text', name='con_Country', value='#{user.contactInfo.con_Country}')
+             label.control-label.elementLabelEditContact(for='con_Phone1') #{appMenuLangVar[0].product_item_contact_phone_1}
+              input#con_Phone1.elementValueEditContact(type='text', name='con_Phone1',value='#{user.contactInfo.con_Phone1}')
+             label.control-label.elementLabelEditContact(for='con_Phone2') #{appMenuLangVar[0].product_item_contact_phone_2}
+              input#con_Phone2.elementValueEditContact(type='text', name='con_Phone2', value='#{user.contactInfo.con_Phone2}')
+             label.control-label.elementLabelEditContact(for='con_Mobile1') #{appMenuLangVar[0].product_item_contact_mobile_1}
+              input#con_Mobile1.elementValueEditContact(type='text', name='con_Mobile1', value='#{user.contactInfo.con_Mobile1}')
+             label.control-label.elementLabelEditContact(for='con_Mobile2') #{appMenuLangVar[0].product_item_contact_mobile_2}
+              input#con_Mobile2.elementValueEditContact(type='text', name='con_Mobile2', value='#{user.contactInfo.con_Mobile2}')
+             p
+        include userpanel-stepbar-add-next
+   
+script.
+ $(document).ready(function() {
+
+   window.onresize=function(){
+     var listItems = $('#picturesUl li');
+     listItems.each(function(idx, li) {
+       var product = $(li);
+       $(this).width($('#pictures').width()/6);
+       $(this).height($('#pictures').width()/6);
+       $(this).find('img').height($('#pictures').width()/6);
+       $(this).find('img').width($('#pictures').width()/6);
+      $('#pictures').height($('#pictures').width()/6 + 50);
+   });
+  }; 
+
+   var listItems = $('#picturesUl li');
+   listItems.each(function(idx, li) {
+     var product = $(li);
+     $(this).width($('#pictures').width()/6);
+     $(this).height($('#pictures').width()/6);
+     $(this).find('img').height($('#pictures').width()/6);
+     $(this).find('img').width($('#pictures').width()/6);
+
+     $('#pictures').height($('#pictures').width()/6 + 70);
+   });
+
+   $(document).on('click', '.typeItem', function () {
+      var selector = 'input[name=' + $(this).parent().parent().attr('id') + ']';
+      $(selector).val($(this).data('index'));
+
+      $(this).parents(".btn-group").find('.btn').html($(this).text()+" <span class=\"caret\"></span>");
+   });
+
+   $(document).on('click', '.imgRemove', function () {
+     var idSrt = $(this).parent().parent().attr('id');
+     var inputFileId = '#' + idSrt.substring(0,idSrt.length - 3);
+     $(inputFileId).val('');
+     $(this).parent().parent().html('<img src="/images/no_picture.jpg"/> <input class="form-control" type="text" name='+ idSrt.substring(0,idSrt.length - 3) +'ind ' + 'value="deleted" style="display: none" />');
+  var listItems = $('#picturesUl li');
+   listItems.each(function(idx, li) {
+     var product = $(li);
+     $(this).width($('#pictures').width()/6);
+     $(this).height($('#pictures').width()/6);
+     $(this).find('img').height($('#pictures').width()/6);
+     $(this).find('img').width($('#pictures').width()/6);
+
+     $('#pictures').height($('#pictures').width()/6 + 70);
+   });
+
+   });
+ });
+ 
+ function validateForm() {
+    if (parseInt(#{menuLevelVar}) == 0) {
+      alert("#{appMenuLangVar[0].product_add_car_error_1}");
+      return false;    
+    }
+
+   if (parseInt(#{menuLevelVar}) == 1  && $('#cat_Level2').children("li").length > 0) {
+      alert("#{appMenuLangVar[0].product_add_car_error_2}"); 
+      return false;
+   }
+  
+   if ($('#dTitle').val() == '') {
+      alert("#{appMenuLangVar[0].product_add_car_error_4}"); 
+      return false;
+   }   
+    
+    try {
+   
+     } catch (err) {
+        alert(err);
+        return false;
+      }
+      return true;
+ };
+ 
+ function selectFile(id) {  
+    var idStr = '' + id;
+    document.getElementById(idStr).click();  
+ };
+ 
+ function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          //var span = document.createElement('span');
+          var img = document.getElementById(evt.target.id + 'img');
+          img.innerHTML = ['<input class="form-control" name=' + evt.target.id + 'ind ' + 'value="new" style="display: none" type="text"/>' +
+                           '<img src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>' + 
+                           '<span> <i class="imgRemove icon-remove-circle icon-3x"/> </span>'
+                           ].join('');
+            var listItems = $('#picturesUl li');
+   listItems.each(function(idx, li) {
+     var product = $(li);
+     $(this).width($('#pictures').width()/6);
+     $(this).height($('#pictures').width()/6);
+     $(this).find('img').height($('#pictures').width()/6);
+     $(this).find('img').width($('#pictures').width()/6);
+
+     $('#pictures').height($('#pictures').width()/6 + 70);
+   });
+  
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  };
+
+  document.getElementById('iImage1').addEventListener('change', handleFileSelect, false);
+  document.getElementById('iImage2').addEventListener('change', handleFileSelect, false);
+  document.getElementById('iImage3').addEventListener('change', handleFileSelect, false);
+  document.getElementById('iImage4').addEventListener('change', handleFileSelect, false);
+  document.getElementById('iImage5').addEventListener('change', handleFileSelect, false);
+

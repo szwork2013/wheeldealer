@@ -1,0 +1,15 @@
+block append
+  div.mobileNotDisplay(id='appNavbar')
+   .navbar
+     .navbar-inner  
+       a.logo(href='/#{langVar}/') #{appMenuLangVar[0].nav_navbar_top_title}
+       ul.nav.pull-right
+         if (!user)          
+          li
+           a.navBarBtn(href='/login/#{langVar}',style='color:black;') #{appMenuLangVar[0].nav_navbar_top_login}&nbsp/&nbsp#{appMenuLangVar[0].nav_navbar_top_signin}&nbsp
+             i.icon-signin
+         else
+          li
+           a.navBarBtn(href='/logout/#{langVar}',style='color:black;') #{appMenuLangVar[0].nav_navbar_top_logout}&nbsp&nbsp
+             i.icon-signout
+
